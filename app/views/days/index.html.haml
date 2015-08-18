@@ -1,0 +1,56 @@
+- content_for :title do
+  %title Home | Trip Planner
+
+.container-fluid.main-con
+  .row.main-row
+    .col-xs-12.col-md-8
+      .row
+        .col-xs-12.nav-row
+          %nav.navbar.navbar-default
+            .container-fluid
+              .navbar-header
+                %button.navbar-toggle{type: "button", data: {toggle: "collapse", target: "#smnav"}}
+                  %span.icon-bar
+                  %span.icon-bar
+                  %span.icon-bar
+              .collapse.navbar-collapse#smnav
+                %ul.nav.navbar-nav
+                  %li
+                    %a.disabled.btn.btn-default{href: "#"} Create PDF
+                  %li
+                    %a.disabled.btn.btn-default{href: "#"} Synd to Calendar
+                %ul.nav.navbar-nav.navbar-right
+                  %li
+                    %a{href: "#"} Share
+                  %li
+                    %a.view-link{href: "#"}
+                      %span View Link
+      .row.content-row
+        .col-xs-2.text-center
+          %img.img.img-responsive.img-circle{src: "", alt: "Add Day"}
+          %p Jump to Day
+          %p.text-center 1
+        .col-xs-10
+          - @days.each do |i|
+            .itinerary-item
+              .row.it-head
+                .col-xs-12
+                  %h2= link_to "#{i.day}", i
+                  = link_to "Delete", i, method: :delete, class: "btn btn-danger pull-right"
+              .row.it-body
+                - i.trip_plans.each do |t|
+                  .col-xs-3
+                    = link_to t.title, t
+          .itinerary-item
+            .row.it-head
+              .col-xs-12
+                - n = @days.max.day.to_i + 1 unless @days.empty?
+                - n = "1" if @days.empty?
+                %h2= n
+            .row.it-body
+              .col-xs-12
+                .no-itinerary.text-center
+                  %p.text-muted You don't have any plans for day #{n} yet.
+                  = link_to "Add Something to Day #{n}", new_trip_plan_path, class: "btn btn-primary"
+    .col-xs-12.col-md-4.goggle-map
+      %p.text-center Once you add some places to your itinerary, they'll show up on a map here!
