@@ -11,12 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150713083816) do
+ActiveRecord::Schema.define(version: 20150819090501) do
 
   create_table "days", force: :cascade do |t|
     t.integer  "day",        limit: 4, null: false
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
+  end
+
+  create_table "pin_notes", force: :cascade do |t|
+    t.text     "note",       limit: 65535, null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
   end
 
   create_table "places", force: :cascade do |t|

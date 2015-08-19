@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   resources :trip_plans, except: :index do
     resource :place, except: [:index, :show]
   end
+  resources :pin_notes, except: [:index, :show]
 end

@@ -1,0 +1,2 @@
+module PinNotesHelper
+end
