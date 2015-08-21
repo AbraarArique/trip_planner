@@ -1,6 +1,18 @@
 - content_for :title do
   %title Home | Trip Planner
 
+.panel.navbar-panel
+  .row
+    .small-12.medium-3.columns
+      %h1 TripPlanner
+    .small-12.medium-9.columns
+      = link_to new_trip_plan_path do
+        %i.fa.fa-plus-circle
+        New
+      = link_to '' do
+        %i.fa.fa-file
+        Download PDF
+
 .container-fluid.main-con
   .row.main-row
     .col-xs-12.col-md-8
