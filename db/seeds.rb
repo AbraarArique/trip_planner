@@ -61,3 +61,19 @@ Place.create(
   long: 24,
   trip_plan_id: 3
 )
+
+PinNote.create(
+  note: 'Note 1'
+)
+PinNote.create(
+  note: 'Note 2'
+)
+PinNote.create(
+  note: 'Note 3'
+)
+PinNote.create(
+  note: 'Note 4'
+)
+PinNote.create(
+  note: 'Note 5'
+)

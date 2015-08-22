@@ -1,6 +1,7 @@
 class DaysController < ApplicationController
   def index
     @days = Day.all
+    @pin_notes = PinNote.all
   end
 
   def show

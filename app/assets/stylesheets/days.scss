@@ -92,3 +92,23 @@
     padding: 10px;
   }
 }
+
+.panel.navbar-panel h3 {
+  margin-top: 15px;
+}
+
+.note {
+  border: 2px solid gray;
+  border-radius: 5px;
+  margin: 15px;
+  padding: 0 15px 0;
+
+  p {
+    display: inline-block;
+  }
+
+  a {
+    padding: 10px 15px;
+    margin-top: 10px;
+  }
+}
