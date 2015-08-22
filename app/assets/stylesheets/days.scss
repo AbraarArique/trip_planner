@@ -35,3 +35,60 @@
   padding: 0.7rem;
   display: inline-block;
 }
+
+.row.full {
+  max-width: 100%;
+}
+
+.day h2 {
+  display: inline-block;
+}
+
+.day {
+  border: 2px solid gray;
+  border-radius: 5px;
+  margin: 15px;
+  padding: 0 15px 0;
+}
+
+.day .row:nth-child(1) {
+  background: #f2f2f2;
+
+  a.button.radius.alert {
+    padding: 12px 20px;
+    margin: 10px;
+  }
+
+  a.button.secondary.round {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    margin: 0;
+  }
+
+  .small-12.columns {
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+}
+
+.day .row:nth-child(2) {
+  padding-left: 5px;
+  padding-right: 5px;
+
+  .columns + .columns:last-child {
+    float: left;
+  }
+
+  .small-3.columns {
+    height: 150px;
+    width: 150px;
+    border: 2px solid #d2d2d2;
+    margin: 10px 5px;
+  }
+
+  .text-center {
+    border: 3px dashed #e2e2e2;
+    margin: 20px auto;
+    padding: 10px;
+  }
+}
