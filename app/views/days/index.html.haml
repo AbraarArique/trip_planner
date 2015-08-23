@@ -1,37 +1,36 @@
 - content_for :title do
   %title Home | Trip Planner
 
-.panel.navbar-panel
-  .row
-    .small-12.medium-3.columns
-      %h1 TripPlanner
-    .small-12.medium-9.columns
-      = link_to new_trip_plan_path do
-        %i.fa.fa-plus-circle
-        New
-      = link_to '' do
-        %i.fa.fa-file
-        Download PDF
-
 .row.full
   .small-12.medium-7.medium-offset-1.columns
+    .panel.navbar-panel
+      .row
+        .small-12.medium-3.columns
+          %h1 TripPlanner
+        .small-12.medium-9.columns
+          = link_to new_trip_plan_path do
+            %i.fa.fa-plus-circle
+            New
+          = link_to '' do
+            %i.fa.fa-file
+            Download PDF
     - @days.each do |i|
       .day
         .row
           .small-12.columns
-            %h2= link_to "#{i.day}", i, class: "button round secondary"
+            = link_to "#{i.day}", i, class: "button round secondary"
             = link_to "Delete", i, method: :delete, class: "button radius alert pull-right"
         .row
           - i.trip_plans.each do |t|
             = link_to t do
               .small-3.columns
-                %p= t.title
+                %p.text-center= t.title
     .day
       .row
         .small-12.columns
           - n = @days.max.day.to_i + 1 unless @days.empty?
           - n = "1" if @days.empty?
-          %h2= link_to n, '', class: "button round secondary disabled"
+          = link_to n, '', class: "button round secondary disabled"
       .row
         .small-12.columns
           .text-center

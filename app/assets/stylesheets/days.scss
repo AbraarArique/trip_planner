@@ -5,6 +5,10 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
+body {
+  background: #ffffff;
+}
+
 .alert-box.top-contact-alert {
   padding: 0;
   margin-bottom: 0;
@@ -45,14 +49,15 @@
 }
 
 .day {
-  border: 2px solid gray;
-  border-radius: 5px;
   margin: 15px;
   padding: 0 15px 0;
 }
 
 .day .row:nth-child(1) {
-  background: #f2f2f2;
+  background: #e9e9e9;
+  border: 1px solid #b9b9b9;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
 
   a.button.radius.alert {
     padding: 12px 20px;
@@ -62,7 +67,17 @@
   a.button.secondary.round {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
-    margin: 0;
+    margin: 5px auto;
+    background: #ffffff;
+    border: 1px solid #d5d5d5;
+
+    &:hover {
+      background: #d5d5d5;
+    }
+  }
+
+  a.button.secondary.round.disabled:hover {
+    background: #f8f8f8;
   }
 
   .small-12.columns {
@@ -74,6 +89,10 @@
 .day .row:nth-child(2) {
   padding-left: 5px;
   padding-right: 5px;
+  border: 1px solid #d5d5d5;
+  border-top: none;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
 
   .columns + .columns:last-child {
     float: left;
@@ -84,12 +103,20 @@
     width: 150px;
     border: 2px solid #d2d2d2;
     margin: 10px 5px;
+    border-radius: 3px;
   }
 
-  .text-center {
+  div.text-center {
     border: 3px dashed #e2e2e2;
     margin: 20px auto;
     padding: 10px;
+    border-radius: 3px;
+  }
+
+  div.text-center p {
+    font-size: 20px;
+    color: #707070;
+    margin-top: 10px;
   }
 }
 
