@@ -1,52 +1,54 @@
 - content_for :title do
   %title Home | Trip Planner
 
-.row.full
-  .small-12.medium-7.medium-offset-1.columns
-    .panel.navbar-panel
-      .row
-        .small-12.medium-3.columns
+.row.full{"data-equalizer" => ""}
+  .small-12.medium-8.columns.compaq{"data-equalizer-watch" => ""}
+    .row
+      .small-12.columns.compaq
+        .panel.navbar-panel
           %h1 TripPlanner
-        .small-12.medium-9.columns
-          = link_to new_trip_plan_path do
+          = link_to new_trip_plan_path, class: "button secondary" do
             %i.fa.fa-plus-circle
             New
-          = link_to '' do
+          = link_to '', class: "button secondary" do
             %i.fa.fa-file
             Download PDF
-    - @days.each do |i|
-      .day
-        .row
-          .small-12.columns
-            = link_to "#{i.day}", i, class: "button round secondary"
-            = link_to "Delete", i, method: :delete, class: "button radius alert pull-right"
-        .row
-          - i.trip_plans.each do |t|
-            = link_to t do
-              .small-3.columns
-                %p.text-center= t.title
-    .day
-      .row
-        .small-12.columns
-          - n = @days.max.day.to_i + 1 unless @days.empty?
-          - n = "1" if @days.empty?
-          = link_to n, '', class: "button round secondary disabled"
-      .row
-        .small-12.columns
-          .text-center
-            %p You don't have any plans for day #{n} yet.
-            = link_to "Add Something to Day #{n}", new_trip_plan_path, class: "button radius"
-  .small-12.medium-4.columns
+    .row
+      .small-1.columns.compaq
+        %p New
+        %p Jump to Day
+      .small-11.columns.compaq
+        - @days.each do |i|
+          .day
+            .row
+              .small-12.columns
+                = link_to "#{i.day}", i, class: "button round secondary"
+                = link_to "Delete", i, method: :delete, class: "button radius alert pull-right"
+            .row
+              - i.trip_plans.each do |t|
+                = link_to t do
+                  .small-3.columns
+                    %p.text-center= t.title
+        .day
+          .row
+            .small-12.columns
+              - n = @days.max.day.to_i + 1 unless @days.empty?
+              - n = "1" if @days.empty?
+              = link_to n, '', class: "button round secondary disabled"
+          .row
+            .small-12.columns
+              .text-center
+                %p You don't have any plans for day #{n} yet.
+                = link_to "Add Something to Day #{n}", new_trip_plan_path, class: "button radius"
+  .small-12.medium-4.columns.compaq{"data-equalizer-watch" => ""}
     .panel.navbar-panel
-      .row
-        .small-12.medium-5.columns
-          %h3 Pin Notes
-        .small-12.medium-7.columns
-          = link_to new_pin_note_path do
-            %i.fa.fa-plus-circle
-            New
+      %h3 Pin Notes
+      = link_to new_pin_note_path, class: "button secondary" do
+        %i.fa.fa-plus-circle
+        New
     - @pin_notes.each do |i|
       .note
         %p= i.note
+        %br
         = link_to "Edit", edit_pin_note_path(i), class: "button radius"
         = link_to "Delete", i, method: :delete, class: "button radius alert"
