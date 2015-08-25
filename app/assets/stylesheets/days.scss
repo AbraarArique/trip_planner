@@ -37,7 +37,7 @@ body {
 .panel.navbar-panel h1 {
   margin: 0;
   vertical-align: middle;
-  color: #43AC6A;
+  color: #008cba;
   display: inline;
   font-size: 30px;
   margin-left: 5px;
@@ -48,7 +48,7 @@ body {
   vertical-align: middle;
   margin: 0;
   margin-left: 5px;
-  color: #43ac6a;
+  color: #008cba;
 }
 
 .navbar-panel a.button.secondary {
@@ -59,7 +59,8 @@ body {
   background-color: #efefef;
 
   &:hover {
-    background-color: #d8d8d8;
+    background-color: #008cba;
+    color: #ffffff;
   }
 
   &:first-of-type {
@@ -84,6 +85,15 @@ body {
   }
 }
 
+.row.mid-full {
+  max-width: 850px;
+  background: #ffffff;
+  border-top: 7px solid #008cba;
+  margin-top: 50px;
+  padding-bottom: 15px;
+  margin-bottom: 35px;
+}
+
 .day h2 {
   display: inline-block;
 }
@@ -97,7 +107,7 @@ body {
   background: #f8faf9;
   border-bottom: 1px solid #DCE0E1;
 
-  a.button.radius.alert {
+  a.button.alert {
     padding: 12px 20px;
     margin: 10px;
   }
@@ -111,8 +121,9 @@ body {
     border: 1px solid #d5d5d5;
 
     &:hover {
-      background: #d5d5d5;
+      background: #008cba;
       color: #ffffff;
+      border-color: #008cba;
     }
   }
 
@@ -141,6 +152,13 @@ body {
     width: 150px;
     border: 1px solid #d2d2d2;
     margin: 10px 5px;
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: scale(1.1, 1.1);
+      border-color: #008cba;
+      transform: rotate(15deg);
+    }
   }
 
   div.text-center {
@@ -180,4 +198,8 @@ body {
 .compaq {
   padding-left: 0;
   padding-right: 0;
+}
+
+#map {
+  height: 500px;
 }

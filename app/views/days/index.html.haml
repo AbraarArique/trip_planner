@@ -23,7 +23,7 @@
             .row
               .small-12.columns
                 = link_to "#{i.day}", i, class: "button round secondary"
-                = link_to "Delete", i, method: :delete, class: "button radius alert pull-right"
+                = link_to "Delete", i, method: :delete, class: "button alert pull-right"
             .row
               - i.trip_plans.each do |t|
                 = link_to t do
@@ -39,7 +39,9 @@
             .small-12.columns
               .text-center
                 %p You don't have any plans for day #{n} yet.
-                = link_to "Add Something to Day #{n}", new_trip_plan_path, class: "button radius"
+                = link_to new_trip_plan_path, class: "button radius" do
+                  %i.fa.fa-plus
+                  Add Something to Day #{n}
   .small-12.medium-4.columns.compaq{"data-equalizer-watch" => ""}
     .panel.navbar-panel
       %h3 Pin Notes
