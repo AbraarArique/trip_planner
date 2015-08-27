@@ -1,33 +1,14 @@
-= form_for @trip_plan, html: { class: "form-horizontal", role: "form" } do |f|
-  .row
-    .col-xs-12.col-sm-6
-      .form-group
-        = f.label :title, class: "control-label col-xs-12"
-        .col-xs-12
-          = f.text_field :title, class: "form-control", placeholder: "Lunch at the Resturant"
-      .form-group
-        = f.label :time, class: "control-label col-xs-12"
-        .col-xs-12
-          = f.text_field :time, class: "form-control", placeholder: "2:30 PM"
-    .col-xs-12.col-sm-6
-      .form-group
-        = f.label :date, class: "control-label col-xs-12"
-        .col-xs-12
-          = f.text_field :date, class: "form-control", placeholder: "1", list: "day-list"
-          %datalist#day-list
-            - (1..365).each do |n|
-              %option= n
-      .form-group
-        = f.label :duration, class: "control-label col-xs-12"
-        .col-xs-12
-          = f.text_field :duration, class: "form-control", placeholder: "2 Hours"
-    .col-xs-12
-      .form-group
-        = f.label :notes, class: "control-label col-xs-12"
-        .col-xs-12
-          = f.text_area :notes, class: "form-control", placeholder: "Notes"
-      %br
-      .form-group
-        .col-xs-12
-          = link_to "Back", :back, class: "btn btn-default"
-          = f.submit "Add This To Your Trip", class: "btn btn-primary"
+= form_for @trip_plan do |f|
+  = f.label :title
+  = f.text_field :title, placeholder: "Lunch at the Resturant"
+  = f.label :time
+  = f.text_field :time, placeholder: "2:30 PM"
+  = f.label :date
+  = f.number_field :date, min: "1", max: "365"
+  = f.label :duration
+  = f.text_field :duration, placeholder: "2 Hours"
+  = f.label :notes
+  = f.text_area :notes, placeholder: "Notes"
+  %br
+  = link_to "Back", :back, class: "button secondary"
+  = f.submit "Save", class: "button"

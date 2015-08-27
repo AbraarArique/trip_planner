@@ -1,14 +1,8 @@
 - content_for :title do
   %title Add a Plan | Trip Planner
 
-%header.form-header
-  .container.form-container
-    .row
-      .col-xs-12
-        %h1 Add a New Plan
-        %hr
-
-%article
-  %section
-    .container.form-container
-      = render 'form'
+.row.mid-full
+  .small-12.columns
+    %h1 Add a New Plan
+    %hr
+    = render 'form'

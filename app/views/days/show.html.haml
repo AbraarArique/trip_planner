@@ -7,25 +7,25 @@
     %hr
     %article
       %section
-        %h4 Plans:
+        %h3 Plans:
         - @trip_plans.each do |i|
           %p At #{i.time} in Day #{i.date} for #{i.duration}.
           %p= i.notes
-          %h4 Place:
+          %b Place:
           - if i.place
             %p Name: #{i.place.name}
             %p Description: #{i.place.description}
             %p Location: #{i.place.location}
             %p URL: #{link_to i.place.url, i.place.url}
-            = link_to "Edit", edit_trip_plan_place_path(i.place), class: "button"
-            = link_to "Delete", trip_plan_place_path(i.place), method: :delete, class: "button warning"
+            = link_to "Edit", edit_trip_plan_place_path(i.place), class: "button small"
+            = link_to "Delete", trip_plan_place_path(i.place), method: :delete, class: "button small warning"
           - else
             = link_to "Add a Place", new_trip_plan_place_path(i.place), class: "button"
           %br
           %br
-          %hr
           = link_to "Edit This Plan", edit_trip_plan_path(i), class: "button"
           = link_to "Delete Plan", i, method: :delete, class: "button alert"
+          %hr
 
         #map
         :javascript
