@@ -1,6 +1,9 @@
 - content_for :title do
   %title Add a Plan | Trip Planner
 
+- if @trip_plan.errors.any?
+  = render 'validation'
+
 .row.mid-full
   .small-12.columns
     %h1 Add a New Plan

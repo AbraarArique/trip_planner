@@ -1,6 +1,6 @@
 class PinNotesController < ApplicationController
   def create
-    @pin_note = PinNote(pin_note_params)
+    @pin_note = PinNote.new(pin_note_params)
     if @pin_note.save
       redirect_to root_path
     else

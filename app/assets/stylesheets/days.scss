@@ -94,6 +94,11 @@ body {
   margin-bottom: 35px;
 }
 
+.row.mid-full.error {
+  @extend .row.mid-full;
+  border-color: #f04124;
+}
+
 .day h2 {
   display: inline-block;
 }

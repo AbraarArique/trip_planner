@@ -1,6 +1,9 @@
 -content_for :title do
   %title Create Pin Note
 
+- if @pin_note.errors.any?
+  = render 'validation'
+
 .row.mid-full
   .small-12.columns
     %h1 Add a New Note

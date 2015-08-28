@@ -1,0 +1,6 @@
+.row.mid-full.error
+  .small-12.columns
+    %b= pluralize(@trip_plan.errors.count, 'Error')
+    %ul
+      - @trip_plan.errors.full_messages.each do |i|
+        %li= i

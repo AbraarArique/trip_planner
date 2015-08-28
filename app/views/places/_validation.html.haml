@@ -1,0 +1,6 @@
+.row.mid-full.error
+  .small-12.columns
+    %b= pluralize(@place.errors.count, 'Error')
+    %ul
+      - @place.errors.full_messages.each do |i|
+        %li= i
