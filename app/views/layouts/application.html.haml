@@ -1,13 +1,13 @@
 !!!
-%html{lang: "en"}
+%html{lang: 'en'}
   %head
-    %meta{charset: "UTF-8"}
-    %meta{name: "viewport", content: "width=device-width, initial-scale=1"}
+    %meta{charset: 'UTF-8'}
+    %meta{name: 'viewport', content: 'width=device-width, initial-scale=1'}
     = yield :title
-    = stylesheet_link_tag    "application"
-    = javascript_include_tag "vendor/modernizr"
-    = javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=AIzaSyA5_R1hOqPnFr500HnLSrNd7PRWRAM2DrE&libraries=places"
-    = javascript_include_tag "application", 'data-turbolinks-track' => true
+    = stylesheet_link_tag    'application'
+    = javascript_include_tag 'vendor/modernizr'
+    = javascript_include_tag 'https://maps.googleapis.com/maps/api/js?key=AIzaSyA5_R1hOqPnFr500HnLSrNd7PRWRAM2DrE&libraries=places'
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
 
   %body
@@ -16,6 +16,6 @@
         .small-12.columns
           %p.text-center
             Need more customization? Contact the
-            %a{href: "mailto:abraararique@outlook.com"} developer.
+            %a{href: 'mailto:abraararique@outlook.com'} developer.
 
     = yield
