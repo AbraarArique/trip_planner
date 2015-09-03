@@ -1,4 +1,4 @@
-class PlacesController < ApplicationController
+class PlaceController < ApplicationController
   before_action :setup_sidekiq
 
   def create
@@ -37,7 +37,9 @@ class PlacesController < ApplicationController
   end
 
   private
-  def places_params
-    params.require(:place).permit(:name, :location, :description, :lat, :long, :url)
-  end
+
+    def places_params
+      params.require(:place).permit(:name, :location, :description, :lat, :long, :url)
+    end
+
 end

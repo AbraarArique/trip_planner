@@ -1,4 +1,5 @@
 class PinNote < ActiveRecord::Base
   validates :note,
-  presence: true
+            presence: true,
+            length: { in: 5..255 }
 end

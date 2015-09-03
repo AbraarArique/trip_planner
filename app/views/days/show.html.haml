@@ -17,14 +17,14 @@
             %p Description: #{i.place.description}
             %p Location: #{i.place.location}
             %p URL: #{link_to i.place.url, i.place.url}
-            = link_to "Edit", edit_trip_plan_place_path(i.place), class: "button small"
-            = link_to "Delete", trip_plan_place_path(i.place), method: :delete, class: "button small warning"
+            = link_to 'Edit', edit_trip_plan_place_path(i.place), class: 'button small'
+            = link_to 'Delete', trip_plan_place_path(i.place), method: :delete, class: 'button small warning'
           - else
-            = link_to "Add a Place", new_trip_plan_place_path(i.place), class: "button"
+            = link_to 'Add a Place', new_trip_plan_place_path(i.place), class: 'button'
           %br
           %br
-          = link_to "Edit This Plan", edit_trip_plan_path(i), class: "button"
-          = link_to "Delete Plan", i, method: :delete, class: "button alert"
+          = link_to 'Edit This Plan', edit_trip_plan_path(i), class: 'button'
+          = link_to 'Delete Plan', i, method: :delete, class: 'button alert'
           %hr
 
         #map

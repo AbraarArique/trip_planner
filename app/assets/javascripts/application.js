@@ -12,8 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require foundation
+//= require foundation.min
 //= require turbolinks
 //= require_tree .
 
 $(function(){ $(document).foundation(); });
+$(document).on('page:change', function() { $(document).foundation(); });

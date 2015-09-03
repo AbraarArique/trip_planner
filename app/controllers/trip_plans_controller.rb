@@ -45,11 +45,12 @@ class TripPlansController < ApplicationController
 
   private
 
-  def get_trip_plan(id)
-    TripPlan.find(id)
-  end
+    def get_trip_plan(id)
+      TripPlan.find(id)
+    end
 
-  def trip_plan_params
-    params.require(:trip_plan).permit(:title, :date, :time, :duration, :notes)
-  end
+    def trip_plan_params
+      params.require(:trip_plan).permit(:title, :date, :time, :duration, :notes)
+    end
+
 end

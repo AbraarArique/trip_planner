@@ -15,12 +15,8 @@
 # Ignore temporary files
 *~
 
-# Ignore RubyMine files
-.idea/
-
-# Ignore database.yml and secrets.yml
-database.yml
-secrets.yml
-
 # Ignore auto generated binaries
 *.[oa]
+
+# Ignore RubyMine files
+.idea/

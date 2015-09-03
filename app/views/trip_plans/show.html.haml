@@ -15,15 +15,15 @@
           %p Description: #{@trip_plan.place.description}
           %p Location: #{@trip_plan.place.location}
           %p URL: #{link_to @trip_plan.place.url, @trip_plan.place.url}
-          = link_to "Edit", edit_trip_plan_place_path(@trip_plan), class: "button"
-          = link_to "Delete", trip_plan_place_path(@trip_plan), method: :delete, class: "button warning"
+          = link_to 'Edit', edit_trip_plan_place_path(@trip_plan), class: 'button'
+          = link_to 'Delete', trip_plan_place_path(@trip_plan), method: :delete, class: 'button warning'
         - else
-          = link_to "Add a Place", new_trip_plan_place_path(@trip_plan), class: "button"
+          = link_to 'Add a Place', new_trip_plan_place_path(@trip_plan), class: 'button'
         %br
         %br
         %hr
-        = link_to "Edit This Plan", edit_trip_plan_path(@trip_plan), class: "button"
-        = link_to "Delete Plan", @trip_plan, method: :delete, class: "button alert"
+        = link_to 'Edit This Plan', edit_trip_plan_path(@trip_plan), class: 'button'
+        = link_to 'Delete Plan', @trip_plan, method: :delete, class: 'button alert'
 
         - if @trip_plan.place
           #map

@@ -1,16 +1,16 @@
 - content_for :title do
   %title Home | Trip Planner
 
-.row.full{"data-equalizer" => ""}
-  .small-12.medium-8.columns.compaq{"data-equalizer-watch" => ""}
+.row.full{'data-equalizer' => true}
+  .small-12.medium-8.columns.compaq{'data-equalizer-watch' => true}
     .row
       .small-12.columns.compaq
         .panel.navbar-panel
           %h1 TripPlanner
-          = link_to new_trip_plan_path, class: "button secondary" do
+          = link_to new_trip_plan_path, class: 'button secondary' do
             %i.fa.fa-plus-circle
             New
-          = link_to '', class: "button secondary" do
+          = link_to '#', class: 'button secondary' do
             %i.fa.fa-file
             Download PDF
     .row
@@ -22,8 +22,8 @@
           .day
             .row
               .small-12.columns
-                = link_to "#{i.day}", i, class: "button round secondary"
-                = link_to "Delete", i, method: :delete, class: "button alert pull-right"
+                = link_to i.day, i, class: 'button round secondary'
+                = link_to 'Delete', i, method: :delete, class: 'button alert right'
             .row
               - i.trip_plans.each do |t|
                 = link_to t do
@@ -33,24 +33,24 @@
           .row
             .small-12.columns
               - n = @days.max.day.to_i + 1 unless @days.empty?
-              - n = "1" if @days.empty?
-              = link_to n, '', class: "button round secondary disabled"
+              - n = '1' if @days.empty?
+              = link_to n, '#', class: 'button round secondary disabled'
           .row
             .small-12.columns
               .text-center
                 %p You don't have any plans for day #{n} yet.
-                = link_to new_trip_plan_path, class: "button radius" do
+                = link_to new_trip_plan_path, class: 'button radius' do
                   %i.fa.fa-plus
                   Add Something to Day #{n}
-  .small-12.medium-4.columns.compaq{"data-equalizer-watch" => ""}
+  .small-12.medium-4.columns.compaq{'data-equalizer-watch' => true}
     .panel.navbar-panel
       %h3 Pin Notes
-      = link_to new_pin_note_path, class: "button secondary" do
+      = link_to new_pin_note_path, class: 'button secondary' do
         %i.fa.fa-plus-circle
         New
     - @pin_notes.each do |i|
       .note
         %p= i.note
         %br
-        = link_to "Edit", edit_pin_note_path(i), class: "button radius"
-        = link_to "Delete", i, method: :delete, class: "button radius alert"
+        = link_to 'Edit', edit_pin_note_path(i), class: 'button radius'
+        = link_to 'Delete', i, method: :delete, class: 'button radius alert'

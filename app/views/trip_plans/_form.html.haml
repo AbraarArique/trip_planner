@@ -1,14 +1,14 @@
 = form_for @trip_plan do |f|
   = f.label :title
-  = f.text_field :title, placeholder: "Lunch at the Resturant"
+  = f.text_field :title, placeholder: 'Lunch at the Resturant'
   = f.label :time
-  = f.text_field :time, placeholder: "2:30 PM"
+  = f.text_field :time, placeholder: '2:30 PM'
   = f.label :date
-  = f.number_field :date, min: "1", max: "365"
+  = f.number_field :date, min: '1', max: '365'
   = f.label :duration
-  = f.text_field :duration, placeholder: "2 Hours"
+  = f.text_field :duration, placeholder: '2 Hours'
   = f.label :notes
-  = f.text_area :notes, placeholder: "Notes"
+  = f.text_area :notes, placeholder: 'Notes'
   %br
-  = link_to "Back", :back, class: "button secondary"
-  = f.submit "Save", class: "button"
+  = link_to 'Back', :back, class: 'button secondary'
+  = f.submit 'Save', class: 'button'
