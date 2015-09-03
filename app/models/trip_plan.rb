@@ -7,6 +7,4 @@ class TripPlan < ActiveRecord::Base
             inclusion: { in: (1..365).to_a }
   validates :title, :time, :duration,
             length: { in: 2..255 }
-  validates :day_id,
-            numericality: true
 end

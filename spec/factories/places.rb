@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :place do
-    name 'N'
+    name 'NN'
     location 'L'
     lat 34
     long 12

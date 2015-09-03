@@ -1,5 +1,5 @@
 FactoryGirl.define do
   factory :pin_note do
-    note 'NNN'
+    note 'NNNNN'
   end
 end
