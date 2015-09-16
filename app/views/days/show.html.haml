@@ -3,7 +3,9 @@
 
 .row.mid-full
   .small-12.columns
-    %h1 Day #{@day.day}
+    %h1
+      Day #{@day.day}
+      = link_to 'Delete', day_path, class: 'button alert right'
     %hr
     %article
       %section
@@ -17,8 +19,8 @@
             %p Description: #{i.place.description}
             %p Location: #{i.place.location}
             %p URL: #{link_to i.place.url, i.place.url}
-            = link_to 'Edit', edit_trip_plan_place_path(i.place), class: 'button small'
-            = link_to 'Delete', trip_plan_place_path(i.place), method: :delete, class: 'button small warning'
+            = link_to 'Edit', edit_trip_plan_place_path(i.place), class: 'button tiny'
+            = link_to 'Delete', trip_plan_place_path(i.place), method: :delete, class: 'button tiny warning'
           - else
             = link_to 'Add a Place', new_trip_plan_place_path(i.place), class: 'button'
           %br

@@ -4,6 +4,5 @@ class DataCleanupWorker
   def perform
     Day.destroy_all
     PinNote.destroy_all
-    # session[:visited] = false
   end
 end
