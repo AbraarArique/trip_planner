@@ -7,12 +7,12 @@ window.input = null
 
 initialize = ->
   window.geocoder = new google.maps.Geocoder()
-  window.input = document.getElementById "place_location"
+  window.input = document.getElementById 'place_location'
   autocomplete = new google.maps.places.Autocomplete input
-  $("#place_location").on "change", ->
-    window.geocoder.geocode { "address": window.input.value }, (result, status) ->
-      $("#place_lat").val result[0].geometry.location.A
-      $("#place_long").val result[0].geometry.location.F
+  $('#place_location').on 'change', ->
+    window.geocoder.geocode { 'address': window.input.value }, (result, status) ->
+      $('#place_lat').val result[0].geometry.location.H
+      $('#place_long').val result[0].geometry.location.L
 
 $(document).ready initialize
-$(document).on "page:load", initialize
+$(document).on 'page:change', initialize

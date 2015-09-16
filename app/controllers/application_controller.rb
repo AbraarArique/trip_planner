@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
 
   def setup_sidekiq
     unless session[:visited]
-      DataCleanupWorker.perform_in(10.seconds)
+      # DataCleanupWorker.perform_in(10.seconds)
     end
   end
 end

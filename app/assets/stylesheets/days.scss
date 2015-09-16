@@ -234,3 +234,14 @@ b {
 h1 a.button.alert {
   margin-top: 10px;
 }
+
+input[type='text'], input[type='number'], textarea {
+  box-shadow: none;
+  font-weight: 200;
+  border-radius: 2px;
+
+  &:focus {
+    border-color: #008CBA;
+    background: #FFFFFF;
+  }
+}
