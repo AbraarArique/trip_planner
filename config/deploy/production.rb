@@ -59,3 +59,8 @@
 #     auth_methods: %w(publickey password)
 #     # password: 'please use keys'
 #   }
+role :app, %w{abraar@tp.abraararique.com}
+role :web, %w{abraar@tp.abraararique.com}
+role :db, %w{abraar@tp.abraararique.com}
+
+server 'tp.abraararique.com', user: 'abraar', roles: %w{web}
