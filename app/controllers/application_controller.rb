@@ -4,12 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   def setup_sidekiq
-    unless session[:visited]
-      delete_event = 'DROP EVENT IF EXISTS cleanup_event'
-      create_event = 'CREATE EVENT cleanup_event ON SCHEDULE AT CURRENT_TIMESTAMP + INTERVAL 15 MINUTE DO BEGIN TRUNCATE TABLE pin_notes; TRUNCATE TABLE places; TRUNCATE TABLE trip_plans; TRUNCATE TABLE days; END'
-      ActiveRecord::Base.connection.execute delete_event
-      ActiveRecord::Base.connection.execute create_event
-      session[:visited] = true
-    end
+    create_event = 'DROP EVENT IF EXISTS cleanup_event; CREATE EVENT cleanup_event ON SCHEDULE AT CURRENT_TIMESTAMP + INTERVAL 15 MINUTE DO CALL tp_cleanup();'
+    ActiveRecord::Base.connection.execute create_event
   end
 end
