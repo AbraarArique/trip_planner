@@ -57,11 +57,12 @@ This app is built using:
     ```
     $ rake assets:precompile RAILS_ENV=production
     ```
-  - Finally, fire up the WEBrick server in production:
+  - Finally, fire up the WEBrick server
     ```
-    $ rails server -e production
+    $ rails server
     ```
-Then visit [http://localhost:3000/](http://localhost:3000) in your browser and you'll see the app up and running.
+
+Once the server is up and ready to receive connections, visit [http://localhost:3000/](http://localhost:3000) in your browser and you'll see the app up and running.
 
 ## Contributing:
 This app is open for community contributions. Please follow the rules bellow to contribute:
