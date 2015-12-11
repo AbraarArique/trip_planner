@@ -51,11 +51,11 @@ This app is built using:
     ```
   - Setup and migrate the database:
     ```
-    $ rake db:setup RAILS_ENV=production
+    $ rake db:setup
     ```
   - Precompile the assets:
     ```
-    $ rake assets:precompile RAILS_ENV=production
+    $ rake assets:precompile
     ```
   - Finally, fire up the WEBrick server
     ```
