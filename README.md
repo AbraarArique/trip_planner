@@ -17,18 +17,16 @@ Trip Planner is a travel planning and note keeping app built using Ruby on Rails
 
 This app is built using:
 
-  - Ruby 2.2.3 (managed by rbenv)
-  - Ruby on Rails 4.2.1
-  - MySQL
+  - Ruby 2 (managed by RVM)
+  - Ruby on Rails 4
+  - PostgreSQL
   - Haml
   - Sass
   - CoffeeScript
   - jQuery
-  - Foundation
-  - Passenger (with Apache)
+  - Zurb Foundation
   - RSpec, Capybara and FactoryGirl for testing
-  - Capistrano for deployment
-  - Git for version control
+  - Heroku
   - Icons from Font Awesome
 
 ## Installation Instructions:
