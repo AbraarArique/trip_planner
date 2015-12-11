@@ -1,4 +1,9 @@
-**Trip Planner**
+# Trip Planner
+
+---
+
+## Introduction
+
 Trip Planner is a travel planning and note keeping app built using Ruby on Rails. It's core features are the following:
 
   - Create "Days" for each day in your trip
@@ -30,7 +35,7 @@ This app is built using:
 
 ---
 
-**Installation Instructions:**
+## Installation Instructions:
 
   - Make sure you have Ruby and Ruby on Rails installed
   - Clone this repository into your local machine:
@@ -45,29 +50,10 @@ This app is built using:
     ```
     $ bundle install --without development test --deployment
     ```
-  - Add a `database.yml` and `secrets.yml` inside the `config/` directory:
+  - Edit `database.yml` and add your own PostgreSQL username, password and other configurations
+  - Edit `secrets.yml` and add your own secrets key. You can generate Rails secrets keys by running:
     ```
-    $ touch config/database.yml
-    $ touch config/secrets.yml
-    ```
-  - Edit `database.yml` and add the following MySQL configuration:
-    ```
-    default: &default
-      adapter: mysql2
-      encoding: utf8
-      pool: 5
-      socket: /var/run/mysqld/mysqld.sock
-
-    production:
-      <<: *default
-      database: trip_planner_production
-      username: example_user // add your MySQL username here (it's best not to use root)
-      password: password123 // add your MySQL password here
-    ```
-  - Edit `secrets.yml` and add the following:
-    ```
-    production:
-      secret_key_base: // run 'rake secret' in the command line and paste the value here
+    $ rake secret
     ```
   - Setup and migrate the database:
     ```
@@ -85,7 +71,7 @@ Then visit `http://localhost:3000/` in your browser and you'll see the app up an
 
 ---
 
-**Contributing:**
+## Contributing:
 This app is open for community contributions. Please follow the rules bellow to contribute:
 
   - Fork this project
