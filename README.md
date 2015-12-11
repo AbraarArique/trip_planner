@@ -1,7 +1,5 @@
 # Trip Planner
 
----
-
 ## Introduction
 
 Trip Planner is a travel planning and note keeping app built using Ruby on Rails. It's core features are the following:
@@ -32,8 +30,6 @@ This app is built using:
   - Capistrano for deployment
   - Git for version control
   - Icons from Font Awesome
-
----
 
 ## Installation Instructions:
 
@@ -68,8 +64,6 @@ This app is built using:
     $ rails server -e production
     ```
 Then visit `http://localhost:3000/` in your browser and you'll see the app up and running.
-
----
 
 ## Contributing:
 This app is open for community contributions. Please follow the rules bellow to contribute:
