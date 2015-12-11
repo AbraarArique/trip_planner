@@ -42,7 +42,7 @@ This app is built using:
     ```
   - Install all the Gems and their dependencies
     ```
-    $ bundle install --without development test --deployment
+    $ bundle install
     ```
   - Edit `database.yml` and add your own PostgreSQL username, password and other configurations
   - Edit `secrets.yml` and add your own secrets key. You can generate Rails secrets keys by running:
