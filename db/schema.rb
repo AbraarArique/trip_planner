@@ -13,41 +13,44 @@
 
 ActiveRecord::Schema.define(version: 20150819090501) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "days", force: :cascade do |t|
-    t.integer  "day",        limit: 4, null: false
-    t.datetime "created_at",           null: false
-    t.datetime "updated_at",           null: false
+    t.integer  "day",        null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "pin_notes", force: :cascade do |t|
-    t.text     "note",       limit: 65535, null: false
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.text     "note",       null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "places", force: :cascade do |t|
-    t.string   "name",         limit: 255,   null: false
-    t.string   "location",     limit: 255,   null: false
-    t.integer  "lat",          limit: 4,     null: false
-    t.integer  "long",         limit: 4,     null: false
-    t.text     "description",  limit: 65535
+    t.string   "name",         limit: 255, null: false
+    t.string   "location",     limit: 255, null: false
+    t.integer  "lat",                      null: false
+    t.integer  "long",                     null: false
+    t.text     "description"
     t.string   "url",          limit: 255
-    t.integer  "trip_plan_id", limit: 4
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
+    t.integer  "trip_plan_id"
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
   end
 
   add_index "places", ["trip_plan_id"], name: "index_places_on_trip_plan_id", using: :btree
 
   create_table "trip_plans", force: :cascade do |t|
-    t.string   "title",      limit: 255,   null: false
-    t.integer  "date",       limit: 4,     null: false
-    t.string   "time",       limit: 255,   null: false
-    t.string   "duration",   limit: 255,   null: false
-    t.text     "notes",      limit: 65535
-    t.integer  "day_id",     limit: 4
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.string   "title",      limit: 255, null: false
+    t.integer  "date",                   null: false
+    t.string   "time",       limit: 255, null: false
+    t.string   "duration",   limit: 255, null: false
+    t.text     "notes"
+    t.integer  "day_id"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
   add_index "trip_plans", ["day_id"], name: "index_trip_plans_on_day_id", using: :btree

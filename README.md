@@ -33,6 +33,7 @@ This app is built using:
 
   - Make sure you have Ruby and Ruby on Rails installed
   - Clone this repository into your local machine:
+
     ```
     $ git clone https://github.com/AbraarAriquePro/trip_planner.git
     ```
