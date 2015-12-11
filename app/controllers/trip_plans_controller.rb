@@ -1,6 +1,4 @@
 class TripPlansController < ApplicationController
-  before_action :setup_sidekiq
-
   def create
     @day = Day.find_by(day: params[:trip_plan][:date])
     if @day
