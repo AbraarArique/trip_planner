@@ -61,7 +61,7 @@ This app is built using:
     ```
     $ rails server -e production
     ```
-Then visit `http://localhost:3000/` in your browser and you'll see the app up and running.
+Then visit [http://localhost:3000/](http://localhost:3000) in your browser and you'll see the app up and running.
 
 ## Contributing:
 This app is open for community contributions. Please follow the rules bellow to contribute:
