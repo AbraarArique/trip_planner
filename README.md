@@ -45,10 +45,7 @@ This app is built using:
     $ bundle install
     ```
   - Edit `database.yml` and add your own PostgreSQL username, password and other configurations
-  - Edit `secrets.yml` and add your own secrets key. You can generate Rails secrets keys by running:
-    ```
-    $ rake secret
-    ```
+  - Edit `secrets.yml` and add your own secrets key. You can generate Rails secrets keys by running `rake secret`
   - Setup and migrate the database:
     ```
     $ rake db:setup
