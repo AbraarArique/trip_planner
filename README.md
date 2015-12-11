@@ -38,24 +38,29 @@ This app is built using:
     $ git clone https://github.com/AbraarAriquePro/trip_planner.git
     ```
   - Then change to the directory you just cloned:
+
     ```
     $ cd trip_planner
     ```
   - Install all the Gems and their dependencies
+
     ```
     $ bundle install
     ```
   - Edit `database.yml` and add your own PostgreSQL username, password and other configurations
   - Edit `secrets.yml` and add your own secrets key. You can generate Rails secrets keys by running `rake secret`
   - Setup and migrate the database:
+
     ```
     $ rake db:setup
     ```
   - Precompile the assets:
+
     ```
     $ rake assets:precompile
     ```
   - Finally, fire up the WEBrick server
+  
     ```
     $ rails server
     ```
