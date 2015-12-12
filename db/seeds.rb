@@ -13,67 +13,67 @@ Day.create(
 )
 
 TripPlan.create(
-  title: 'Morning Walk',
+  title: 'Arrive At Bali',
   date: 1,
-  time: '7:00 AM',
-  duration: '1 Hour',
-  notes: 'Need to start the day fresh.',
+  time: '6:00 AM',
+  duration: '6 Hours',
+  notes: 'Just arrived at Bali. Getting settled in a private villa near the beach. Awesome view.',
   day_id: 1
 )
 TripPlan.create(
-  title: 'Learning Time',
+  title: 'Going to Sanur',
   date: 1,
-  time: '5:00 PM',
-  duration: '1 Hour',
-  notes: 'Let\'s increase our knowledge.',
+  time: '10:00 AM',
+  duration: '3 Hour',
+  notes: 'The Sanur beach is a must-see-place in Bali. So we\'re gonna see it first.',
   day_id: 1
 )
 TripPlan.create(
-  title: 'Rails Development',
+  title: 'Ubud',
   date: 2,
-  time: '8:00 PM',
-  duration: '1 Hour 30 Minutes',
-  notes: 'Do some awesome Ruby coding.',
+  time: '8:00 AM',
+  duration: '3 Hour 30 Minutes',
+  notes: 'The scenary at Ubud is amazing. The green fields will just catch your eyes!',
   day_id: 2
 )
 
 Place.create(
-  name: 'Besides the Hills',
-  location: 'Mountain Hills, Vietnam',
-  description: 'Beautiful Hills of the Sea.',
-  lat: 0,
-  long: 0,
+  name: 'The Island of Indonesia',
+  location: 'Bali, Indonesia',
+  description: 'Bali is an Indonesian island known for its forested volcanic mountains, iconic rice paddies, beaches and coral reefs.',
+  lat: 8.6500,
+  long: 115.2167,
   trip_plan_id: 1
 )
 Place.create(
-  name: 'Around the Mountains',
-  location: 'Mountain View, Calafornia',
-  description: 'High Mountain Giants.',
-  lat: 56,
-  long: 32,
+  name: 'The Beach of Bali',
+  location: 'Denpasar, Bali, Indonesia',
+  description: 'Sanur is a coastal stretch of beach of Denpasar city of southeast Bali.',
+  lat: 8.6833,
+  long: 115.2667,
   trip_plan_id: 2
 )
 Place.create(
-  name: 'At Home',
-  location: 'USA',
-  description: 'Home at the top of Hill.',
-  lat: 15,
-  long: 24,
+  name: 'Town in Indonesia',
+  location: 'Ubud, Bali, Indenosia',
+  description: 'The town of Ubud, in the uplands of Bali, Indonesia, is known as a center for traditional crafts and dance.',
+  lat: 8.5069,
+  long: 115.2624,
   trip_plan_id: 3
 )
 
 PinNote.create(
-  note: 'Note 1'
+  note: 'Oops! Forgot to call my mom.'
 )
 PinNote.create(
-  note: 'Note 2'
+  note: 'The private villa rate: $250/night'
 )
 PinNote.create(
-  note: 'Note 3'
+  note: 'Places to see: Sanur Beach, Ubud'
 )
 PinNote.create(
-  note: 'Note 4'
+  note: 'The food here is delicious.'
 )
 PinNote.create(
-  note: 'Note 5'
+  note: 'A loooong day, very tired :('
 )
