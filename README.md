@@ -37,7 +37,7 @@ This app is built using:
 *The Home Page: Displays all the plans and pin notes.*
 ![Plan Details Page](https://github.com/AbraarAriquePro/trip_planner/blob/master/screenshots/plan.png)
 *Plan Details Page: Shows plan name, time, duration, date, extra notes, associated place, location and map.*
-![Edit Plan Page](https://github.com/AbraarAriquePro/trip_planner/blob/master/screenshots/edit_plan.png)
+![Edit Plan Page](https://github.com/AbraarAriquePro/trip_planner/blob/master/screenshots/plan_edit.png)
 *Plan Editing Page: Edit a plan's title, time, date, duration and notes.*
 ![Edit Place Page](https://github.com/AbraarAriquePro/trip_planner/blob/master/screenshots/edit_place.png)
 *Place Editing Page: Edit a place's name, location, description and URL. The location field has Google Maps Location Autofilling and Latitude and Longitude is automatically generated from the location.*
