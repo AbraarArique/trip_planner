@@ -29,28 +29,28 @@ ActiveRecord::Schema.define(version: 20160514153446) do
   end
 
   create_table "places", force: :cascade do |t|
-    t.string   "name",         limit: 255, null: false
-    t.string   "location",     limit: 255, null: false
-    t.integer  "lat",                      null: false
-    t.integer  "long",                     null: false
+    t.string   "name",         null: false
+    t.string   "location",     null: false
+    t.integer  "lat",          null: false
+    t.integer  "long",         null: false
     t.text     "description"
-    t.string   "url",          limit: 255
+    t.string   "url"
     t.integer  "trip_plan_id"
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   add_index "places", ["trip_plan_id"], name: "index_places_on_trip_plan_id", using: :btree
 
   create_table "trip_plans", force: :cascade do |t|
-    t.string   "title",      limit: 255, null: false
-    t.integer  "date",                   null: false
-    t.string   "time",       limit: 255, null: false
-    t.string   "duration",   limit: 255, null: false
+    t.string   "title",      null: false
+    t.integer  "date",       null: false
+    t.string   "time",       null: false
+    t.string   "duration",   null: false
     t.text     "notes"
     t.integer  "day_id"
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   add_index "trip_plans", ["day_id"], name: "index_trip_plans_on_day_id", using: :btree
@@ -61,6 +61,11 @@ ActiveRecord::Schema.define(version: 20160514153446) do
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.inet     "current_sign_in_ip"
+    t.inet     "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
   end

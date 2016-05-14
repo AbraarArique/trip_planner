@@ -1,4 +1,6 @@
 class PlacesController < ApplicationController
+  before_action :authenticate_user!
+
   def create
     @trip_plan = get_trip_plan(params[:trip_plan_id])
     @place = @trip_plan.build_place(places_params)

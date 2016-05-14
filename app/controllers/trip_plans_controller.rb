@@ -1,4 +1,6 @@
 class TripPlansController < ApplicationController
+  before_action :authenticate_user!
+
   def create
     @day = Day.find_by(day: params[:trip_plan][:date])
     if @day

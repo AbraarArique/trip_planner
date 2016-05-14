@@ -1,4 +1,6 @@
 class DaysController < ApplicationController
+  before_action :authenticate_user!
+
   def index
     @days = Day.all
     @pin_notes = PinNote.all

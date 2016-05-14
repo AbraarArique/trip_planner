@@ -1,4 +1,6 @@
 class PinNotesController < ApplicationController
+  before_action :authenticate_user!
+
   def create
     @pin_note = PinNote.new(pin_note_params)
     if @pin_note.save
