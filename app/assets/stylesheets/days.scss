@@ -6,7 +6,33 @@
 @import "font-awesome";
 
 body {
-  background: #eeeeee;
+  background: #337ab7;
+}
+
+.login-page {
+  .row {
+    width: 35%;
+    margin: 0 auto;
+    margin-top: 50px;
+  }
+  .login-row {
+    width: 35%;
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 5px;
+  }
+  .form-horizontal .form-group {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .col-sm-12 {
+    padding: 0;
+  }
+}
+
+.btn.btn-primary {
+  transition: all 0.3s ease-in-out 0s;
 }
 
 h1, h2, h3 {
