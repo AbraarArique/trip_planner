@@ -23,11 +23,11 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
-# Use Haml
-gem 'haml'
+# Use Devise
+gem 'devise'
 
-# Use Foundation and Font Awesome
-gem 'foundation-rails'
+# Use Bootstrap and Font Awesome
+gem 'bootstrap-sass'
 gem 'font-awesome-sass'
 
 group :development, :test do
