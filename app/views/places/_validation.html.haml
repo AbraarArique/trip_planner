@@ -1,7 +1,0 @@
-.row.mid-full.error
-  .small-12.columns
-    %h3
-      %b Oops! #{pluralize(@place.errors.count, 'Error')}
-    %ul
-      - @place.errors.full_messages.each do |i|
-        %li= i

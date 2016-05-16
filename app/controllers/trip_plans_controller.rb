@@ -10,7 +10,7 @@ class TripPlansController < ApplicationController
       @trip_plan = @day.trip_plans.build(trip_plan_params)
     end
     if @trip_plan.save
-      redirect_to new_trip_plan_place_path(@trip_plan)
+      redirect_to trip_plan_path(@trip_plan)
     else
       render 'new'
     end
