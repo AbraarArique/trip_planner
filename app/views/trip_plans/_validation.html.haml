@@ -1,7 +1,0 @@
-.row.mid-full.error
-  .small-12.columns
-    %h3
-      %b Oops! #{pluralize(@trip_plan.errors.count, 'Error')}
-    %ul
-      - @trip_plan.errors.full_messages.each do |i|
-        %li= i

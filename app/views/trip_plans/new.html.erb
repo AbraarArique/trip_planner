@@ -1,0 +1,17 @@
+<% content_for :title do %>
+  <title>Add a Plan | Trip Planner</title>
+<% end %>
+
+<% if @trip_plan.errors.any? %>
+  <%= render 'validation' %>
+<% end %>
+
+<div class="container">
+  <div class="row mid-full">
+    <div class="col-xs-12">
+      <h1>Add a New Plan</h1>
+      <hr>
+      <%= render 'form' %>
+    </div>
+  </div>
+</div>

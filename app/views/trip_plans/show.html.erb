@@ -1,0 +1,41 @@
+<% content_for :title do %>
+  <title>Plan Details | Trip Planner</title>
+<% end %>
+
+<div class="container">
+  <div class="row mid-full">
+    <div class="col-xs-12">
+      <h1><%= @trip_plan.title %></h1>
+      <hr>
+      <article>
+        <section>
+          <p>At #{@trip_plan.time} in Day #{@trip_plan.date} for #{@trip_plan.duration}.</p>
+          <p><%= @trip_plan.notes %></p>
+          <h4>Place:</h4>
+          <% if @trip_plan.place %>
+            <p>Name: #{@trip_plan.place.name}</p>
+            <p>Description: #{@trip_plan.place.description}</p>
+            <p>Location: #{@trip_plan.place.location}</p>
+            <p>URL: #{link_to @trip_plan.place.url, @trip_plan.place.url}</p>
+            <%= link_to 'Edit', edit_trip_plan_place_path(@trip_plan), class: 'button' %>
+            <%= link_to 'Delete', trip_plan_place_path(@trip_plan), method: :delete, class: 'button warning' %>
+          <% else %>
+            <%= link_to 'Add a Place', new_trip_plan_place_path(@trip_plan), class: 'button' %>
+          <br>
+          <br>
+          <hr>
+          <%= link_to 'Edit This Plan', edit_trip_plan_path(@trip_plan), class: 'button' %>
+          <% link_to 'Delete Plan', @trip_plan, method: :delete, class: 'button alert' %>
+          <% if @trip_plan.place %>
+            <div id="map"></div>
+            <script>
+              var map = new google.maps.Map(document.getElementById('map'), { center: { lat: -34, lng: 150 }, zoom: 8 });
+              map.setCenter({ lat: #{@trip_plan.place.lat}, lng: #{@trip_plan.place.long} });
+              var marker = new google.maps.Marker({map: map, position: { lat: #{@trip_plan.place.lat}, lng: #{@trip_plan.place.long} }});
+            </script>
+          <% end %>
+        </section>
+      </article>
+    </div>
+  </div>
+</div>
