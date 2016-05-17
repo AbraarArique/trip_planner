@@ -15,8 +15,5 @@
 # Ignore temporary files
 *~
 
-# Ignore auto generated binaries
-*.[oa]
-
 # Ignore Mac junk
 .DS_Store
