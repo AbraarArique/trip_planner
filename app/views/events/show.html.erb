@@ -1,0 +1,21 @@
+<% content_for :title do %>
+  <title>Event Details | Trip Planner</title>
+<% end %>
+
+<div class="container">
+  <div class="row mid-full">
+    <div class="col-xs-12">
+      <h1><%= @event.title %></h1>
+      <hr>
+      <article>
+        <section>
+          <p>At #{@event.time} in Day #{@event.date} for #{@event.duration}.</p>
+          <p><%= @event.notes %></p>
+          <h4>Place:</h4>
+          <%= link_to 'Edit This Plan', edit_event_path(@event), class: 'button' %>
+          <% link_to 'Delete Plan', @event, method: :delete, class: 'button alert' %>
+        </section>
+      </article>
+    </div>
+  </div>
+</div>

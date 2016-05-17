@@ -1,9 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
-  root 'days#index'
-  resources :days, only: [:index, :show, :destroy]
-  resources :trip_plans, except: :index do
-    resource :place, except: [:index, :show]
-  end
+  root 'trips#index'
+  resources :trips, only: [:index, :show, :destroy]
+  resources :events, except: :index
   resources :pin_notes, except: [:index, :show]
 end
