@@ -1,6 +1,0 @@
-.row.mid-full.error
-  .small-12.columns
-    %b= pluralize(@pin_note.errors.count, 'Error')
-    %ul
-      - @pin_note.errors.full_messages.each do |i|
-        %li= i

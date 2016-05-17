@@ -1,0 +1,17 @@
+<% content_for :title do %>
+  <title>Create Pin Note</title>
+<% end %>
+
+<% if @pin_note.errors.any? %>
+  <%= render 'validation' %>
+<% end %>
+
+<div class="container">
+  <div class="row mid-full">
+    <div class="col-xs-12">
+      <h1>Add a New Note</h1>
+      <hr>
+      <%= render 'form' %>
+    </div>
+  </div>
+</div>
