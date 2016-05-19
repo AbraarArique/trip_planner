@@ -9,6 +9,27 @@ body {
   background: #337ab7;
 }
 
+.row-eq-height {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.alert {
+  margin-bottom: 0;
+}
+
+.no-gutter > [class*='col-'] {
+    padding-right:0;
+    padding-left:0;
+}
+
+.navbar {
+  margin-bottom: 0;
+  border-radius: 0;
+}
+
 .devise-page {
   .row {
     width: 35%;
@@ -80,6 +101,7 @@ b {
   height: 50px;
   border-right: none;
   border-left: none;
+  border-radius: 0;
 }
 
 .panel.navbar-panel h1 {

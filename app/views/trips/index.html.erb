@@ -2,34 +2,36 @@
   <title> Home | Trip Planner</title>
 <% end %>
 
-<div class="container">
-  <div class="row full collapse">
+<%= render 'header' %>
+<div class="container-fluid">
+  <div class="row row-eq-height no-gutter">
     <div class="col-xs-12 col-md-8">
-      <div class="row collapse">
+      <div class="row">
         <div class="col-xs-12">
           <div class="panel navbar-panel">
-            <h1>Trip Planner</h1>
-            <%= link_to new_trip_path, class: 'button secondary' do %>
+            <h1>Trips</h1>
+            <%= link_to new_trip_path, class: 'btn btn-info' do %>
               <i class="fa fa-plus-circle"></i>
               New
             <% end %>
           </div>
         </div>
       </div>
-      <div class="row collapse">
+      <div class="row">
         <div class="col-xs-1">
           <p class="text-right">
-            <%= link_to new_event_path, class: 'new-plan' do %>
-              <i class="fa fa-plus-circle">
+            <%= link_to '', class: 'new-plan' do %>
+              <i class="fa fa-plus-circle"></i>
             <% end %>
-          </div>
+          </p>
+        </div>
         <div class="col-xs-11">
           <% @trips.each do |i| %>
             <div class="day">
               <div class="row">
                 <div class="col-xs-12">
-                  <%= link_to i.event, i, class: 'button round secondary' %>
-                  <%= link_to 'Delete', i, method: :delete, class: 'button alert right' %>
+                  <%= link_to i.event, i, class: 'btn btn-round btn-secondary' %>
+                  <%= link_to 'Delete', i, method: :delete, class: 'btn btn-danger push-right' %>
                 </div>
               </div>
               <div class="row">
@@ -42,33 +44,26 @@
                 <% end %>
               </div>
             </div>
-          <div class="day">
-            <div class="row">
-              <div class="col-xs-12">
-                <%
-                n = @days.max.day.to_i + 1 unless @days.empty?
-                n = '1' if @days.empty?
-                %>
-                <%= link_to n, '#', class: 'button round secondary disabled' %>
-              </div>
-            <div class="row">
-              <div class="col-xs-12">
-                <div class="text-center">
-                  <p>You don't have any plans for day #{n} yet.</p>
-                  <%= link_to new_trip_plan_path, class: 'button' do %>
-                    <i class="fa fa-plus"></i>&nbsp;Add Something to Day #{n}
-                  <% end %>
+            <div class="day">
+              <div class="row">
+                <div class="col-xs-12">
+                  <div class="text-center">
+                    <p>You don't have any plans for day #{n} yet.</p>
+                    <%= link_to new_trip_plan_path, class: 'button' do %>
+                      <i class="fa fa-plus"></i>&nbsp;Add Something to Day #{n}
+                    <% end %>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
+          <% end %>
         </div>
       </div>
     </div>
     <div class="col-xs-12 col-md-4">
       <div class="panel navbar-panel">
-        <h3>Pin Notes</p>
-        <%= link_to new_pin_note_path, class: 'button secondary' do %>
+        <h3>Pin Notes</h3>
+        <%= link_to new_pin_note_path, class: 'btn btn-info' do %>
           <i class="fa fa-plus-circle"></i>
           New
         <% end %>
