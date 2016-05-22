@@ -1,0 +1,32 @@
+<% content_for :title do %>
+  <title>Forgot Your Password? | Trip Planner</title>
+<% end %>
+
+<div class="container devise-page">
+  <div class="row">
+    <div class="col-xs-12 text-center">
+      <%= link_to 'http://abraararique.com/trip_planner' do %>
+        <%= image_tag 'tp_inverted', class: 'img-responsive' %>
+      <% end %>
+    </div>
+  </div>
+  <div class="row devise-row">
+    <div class="col-xs-12">
+      <h1>Forgot Password?</h1>
+      <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: {class: 'form-horizontal', role: 'form'}) do |f| %>
+        <div class="form-group">
+          <div class="col-sm-12 input-group">
+            <span class="input-group-addon" id="emailicon"><i class="fa fa-envelope"></i></span>
+            <%= f.email_field :email, autofocus: true, class: 'form-control', placeholder: 'Enter your email' , html: {'aria-describedby' => 'emailicon'} %>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-12">
+            <%= f.submit "Send Password Reset Instructions", class: 'btn btn-primary btn-block' %>
+          </div>
+        </div>
+      <% end %>
+      <%= link_to 'Remember your password? Login here!', new_user_session_path %>
+    </div>
+  </div>
+</div>
