@@ -26,37 +26,37 @@
           </p>
         </div>
         <div class="col-xs-11">
-          <% @trips.each do |i| %>
+          <% @trips.each do |trip| %>
             <div class="day">
               <div class="row">
                 <div class="col-xs-12">
-                  <%= link_to i.event, i, class: 'btn btn-round btn-secondary' %>
-                  <%= link_to 'Delete', i, method: :delete, class: 'btn btn-danger push-right' %>
+                  <h2><%= trip.name %></h2>
+                  <%= link_to 'Edit', trip, class: 'btn btn-round btn-secondary' %>
+                  <%= link_to 'Delete', trip, method: :delete, class: 'btn btn-danger push-right' %>
                 </div>
               </div>
               <div class="row">
-                <% i.events.each do |t| %>
-                  <%= link_to t do %>
+                <% trip.events.each do |event| %>
+                  <%= link_to event do %>
                     <div class="col-xs-3">
-                      <p class="text-center"><%= t.name %></p>
+                      <p class="text-center"><%= event.title %></p>
                     </div>
                   <% end %>
                 <% end %>
               </div>
             </div>
-            <div class="day">
-              <div class="row">
-                <div class="col-xs-12">
-                  <div class="text-center">
-                    <p>You don't have any plans for day #{n} yet.</p>
-                    <%= link_to new_trip_plan_path, class: 'button' do %>
-                      <i class="fa fa-plus"></i>&nbsp;Add Something to Day #{n}
-                    <% end %>
-                  </div>
+          <% end %>
+          <div class="day">
+            <div class="row">
+              <div class="col-xs-12">
+                <div class="text-center">
+                  <%= link_to new_trip_path, class: 'button' do %>
+                    <i class="fa fa-plus"></i>&nbsp;Add a New Trip
+                  <% end %>
                 </div>
               </div>
             </div>
-          <% end %>
+          </div>
         </div>
       </div>
     </div>
@@ -68,11 +68,11 @@
           New
         <% end %>
       </div>
-      <% @pin_notes.each do |i| %>
+      <% @pin_notes.each do |pin_note| %>
         <div class="note">
-          <p><%= i.note %></p><br>
-          <%= link_to 'Edit', edit_pin_note_path(i), class: 'button' %>
-          <%= link_to 'Delete', i, method: :delete, class: 'button alert' %>
+          <p><%= pin_note.note %></p><br>
+          <%= link_to 'Edit', edit_pin_note_path(pin_note), class: 'button' %>
+          <%= link_to 'Delete', pin_note, method: :delete, class: 'button alert' %>
         </div>
       <% end %>
     </div>

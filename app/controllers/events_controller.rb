@@ -2,7 +2,7 @@ class EventsController < ApplicationController
   before_action :authenticate_user!
 
   def create
-    @trip = Trip.find(params[:trip_id])
+    @trip = current_user.trips.find(params[:trip_id])
     @event = @trip.events.new(event_params)
     if @event.save
       redirect_to root_path
@@ -12,23 +12,20 @@ class EventsController < ApplicationController
   end
 
   def new
-    @trip = Trip.find(params[:trip_id])
+    @trip = current_user.trips.find(params[:trip_id])
     @event = @trip.events.new
   end
 
   def edit
-    @trip = Trip.find(params[:trip_id])
-    @event = @trip.events.find(params[:id])
+    @event = get_event(params)
   end
 
   def show
-    @trip = Trip.find(params[:trip_id])
-    @event = @trip.events.find(params[:id])
+    @event = get_event(params)
   end
 
   def update
-    @trip = Trip.find(params[:trip_id])
-    @event = @trip.events.find(params[:id])
+    @event = get_event(params)
     if @event.update(event_params)
       redirect_to @event
     else
@@ -37,16 +34,18 @@ class EventsController < ApplicationController
   end
 
   def destroy
-    @trip = Trip.find(params[:trip_id])
-    @event = @trip.events.find(params[:id])
+    @event = get_event(params)
     @event.destroy
     redirect_to root_path
   end
 
   private
 
-    def event_params
-      params.require(:event).permit(:title, :date, :time, :duration, :notes)
-    end
+  def get_event(id)
+    current_user.trips.find(params[:trip_id]).events.find(id)
+  end
 
+  def event_params
+    params.require(:event).permit(:title, :date, :time, :duration, :notes)
+  end
 end

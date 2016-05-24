@@ -19,8 +19,9 @@ ActiveRecord::Schema.define(version: 20160514153446) do
   create_table "events", force: :cascade do |t|
     t.string   "title",      null: false
     t.date     "date",       null: false
-    t.time     "time",       null: false
-    t.string   "duration",   null: false
+    t.time     "time"
+    t.string   "duration"
+    t.string   "place"
     t.text     "notes"
     t.integer  "trip_id"
     t.datetime "created_at", null: false
@@ -40,8 +41,8 @@ ActiveRecord::Schema.define(version: 20160514153446) do
 
   create_table "trips", force: :cascade do |t|
     t.string   "name",       null: false
-    t.date     "start"
-    t.date     "end"
+    t.date     "start_date"
+    t.date     "end_date"
     t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
