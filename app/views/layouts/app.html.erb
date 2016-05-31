@@ -7,11 +7,6 @@
     <%= stylesheet_link_tag    'application' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
-    <style>
-      body {
-        background: #337ab7;
-      }
-    </style>
   </head>
 
   <body>
@@ -28,5 +23,14 @@
       </div>
     <% end %>
     <%= yield %>
+    <footer>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-xs-12 text-center">
+            <p class="text-muted">Copyright &copy; 2016 by Abraar Arique Diganto. All rights reserved.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

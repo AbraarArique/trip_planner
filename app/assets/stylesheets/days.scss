@@ -6,7 +6,7 @@
 @import "font-awesome";
 
 body {
-  background: #337ab7;
+  background: #f8f8f8;
 }
 
 .row-eq-height {
@@ -56,7 +56,7 @@ body {
   transition: all 0.3s ease-in-out 0s;
 }
 
-h1, h2, h3 {
+h1, h2, h3, h4 {
   font-weight: 100;
   color: #555555;
 
@@ -180,6 +180,7 @@ b {
 .day {
   margin: 15px;
   padding: 0 15px 0;
+  border: 1px solid #eeeeee;
 }
 
 .day .row:nth-child(1) {
@@ -218,8 +219,7 @@ b {
 }
 
 .day .row:nth-child(2) {
-  padding-left: 5px;
-  padding-right: 5px;
+  padding: 15px;
   background: #ffffff;
 
   .columns + .columns:last-child {
@@ -257,10 +257,10 @@ b {
 }
 
 .note {
-  border: 1px solid #e2e2e2;
-  border-radius: 5px;
-  margin: 15px;
+  border: 1px solid #eeeeee;
   padding: 0 15px 0;
+  background: #ffffff;
+  margin: 15px;
 
   p {
     display: inline-block;

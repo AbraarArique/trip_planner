@@ -1,4 +1,5 @@
 class EventsController < ApplicationController
+  layout 'app'
   before_action :authenticate_user!
 
   def create
