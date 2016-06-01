@@ -12,7 +12,16 @@
             <div class="col-xs-12">
               <h2><%= trip.name %></h2>
               <%= link_to 'Delete', trip, method: :delete, class: 'btn btn-danger pull-right' %>
-              <%= link_to 'Edit', trip, class: 'btn btn-round btn-info pull-right' %>
+              <%= link_to 'Edit', edit_trip_path(trip), class: 'btn btn-round btn-info pull-right' %>
+              <hr>
+              <p>
+                <% if trip.start_date != nil %>
+                  From <%= trip.start_date %>
+                <% end %>
+                <% if trip.end_date != nil %>
+                  To <%= trip.end_date %>
+                <% end %>
+              </p>
             </div>
           </div>
           <div class="row text-center">
@@ -40,14 +49,8 @@
           <div class="row">
             <div class="col-xs-12">
               <h4><%= pin_note.note %></h4>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-xs-6">
-              <%= link_to 'Edit', edit_pin_note_path(pin_note), class: 'btn btn-info btn-block' %>
-            </div>
-            <div class="col-xs-6">
-              <%= link_to 'Delete', pin_note, method: :delete, class: 'btn btn-danger btn-block' %>
+              <%= link_to 'Delete', pin_note, method: :delete, class: 'btn btn-danger pull-right' %>
+              <%= link_to 'Edit', edit_pin_note_path(pin_note), class: 'btn btn-info pull-right' %>
             </div>
           </div>
         </div>

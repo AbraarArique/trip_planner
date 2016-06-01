@@ -1,0 +1,17 @@
+<% content_for :title do %>
+  <title>Edit Trip</title>
+<% end %>
+
+<% if @trip.errors.any? %>
+  <%= render 'validation' %>
+<% end %>
+
+<div class="container">
+  <div class="row mid-full">
+    <div class="col-xs-12">
+      <h1>Edit Trip</h1>
+      <hr>
+      <%= render 'form' %>
+    </div>
+  </div>
+</div>

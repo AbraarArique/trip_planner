@@ -5,10 +5,6 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
-body {
-  background: #f8f8f8;
-}
-
 .row-eq-height {
   display: -webkit-box;
   display: -webkit-flex;
@@ -54,6 +50,17 @@ body {
 
 .btn.btn-primary {
   transition: all 0.3s ease-in-out 0s;
+}
+
+.pull-right {
+  margin-top: 15px;
+  margin-left: 10px;
+}
+
+hr {
+  margin: 0;
+  margin-bottom: 5px;
+  border-color: #dce0e1;
 }
 
 h1, h2, h3, h4 {
@@ -173,8 +180,12 @@ b {
   border-color: #f04124;
 }
 
-.day h2 {
+.day h2, .day h4 {
   display: inline-block;
+}
+
+.day h4 {
+  margin: 20px 0;
 }
 
 .day {
@@ -292,4 +303,38 @@ input[type='text'], input[type='number'], textarea {
     border-color: #008CBA;
     background: #FFFFFF;
   }
+}
+
+.navbar-default {
+  background-color: #337ab7;
+
+  .navbar-brand, .navbar-nav > li > a {
+    color: #ffffff;
+
+    &:hover {
+      color: #ffffff;
+      background: #286090;
+    }
+  }
+}
+
+.navbar a.btn.btn-info {
+  background: transparent;
+  color: #ffffff;
+  margin: 0 10px;
+  border-color: #ffffff;
+
+  &:hover {
+    background: #ffffff;
+    color: #337ab7;
+  }
+}
+
+.navbar a {
+  transition: all 0.2s ease-in-out 0s;
+}
+
+.navbar .img-responsive {
+  height: 100%;
+  display: inline;
 }

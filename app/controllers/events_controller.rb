@@ -14,7 +14,7 @@ class EventsController < ApplicationController
 
   def new
     @trip = current_user.trips.find(params[:trip_id])
-    @event = @trip.events.new
+    @event = @trip.events.build
   end
 
   def edit

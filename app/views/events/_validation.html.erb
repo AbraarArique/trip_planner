@@ -1,7 +1,7 @@
 <div class="row mid-full error">
   <div class="col-xs-12">
     <h3>
-      <b>Oops! #{pluralize(@event.errors.count, 'Error')}</b>
+      <b>Oops! <%= pluralize(@event.errors.count, 'Error') %></b>
     </h3>
     <ul>
       <% @event.errors.full_messages.each do |i| %>

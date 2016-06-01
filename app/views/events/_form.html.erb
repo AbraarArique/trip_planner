@@ -1,15 +1,38 @@
-<%= form_for @event do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title, placeholder: 'Lunch at the Resturant' %>
-  <%= f.label :time %>
-  <%= f.text_field :time, placeholder: '2:30 PM' %>
-  <%= f.label :date %>
-  <%= f.number_field :date, min: '1', max: '365', placeholder: '1' %>
-  <%= f.label :duration %>
-  <%= f.text_field :duration, placeholder: '2 Hours' %>
-  <%= f.label :notes %>
-  <%= f.text_area :notes, placeholder: 'Meet Jason at the coffee shop.' %>
-  <br>
-  <%= link_to 'Back', :back, class: 'button secondary' %>
-  <%= f.submit 'Save', class: 'button' %>
+<%= form_for [@trip, @event], html: {role: 'form', class: 'form-horizontal'} do |f| %>
+  <div class="form-group">
+    <%= f.label :title, class: 'col-sm-2 control-label' %>
+    <div class="col-sm-10">
+      <%= f.text_field :title, class: 'form-control', placeholder: 'Title' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :time, class: 'col-sm-2 control-label' %>
+    <div class="col-sm-10">
+      <%= f.time_field :time, class: 'form-control', placeholder: 'Time' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :date, class: 'col-sm-2 control-label' %>
+    <div class="col-sm-10">
+      <%= f.date_field :date, class: 'form-control', placeholder: 'Date' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :duration, class: 'col-sm-2 control-label' %>
+    <div class="col-sm-10">
+      <%= f.text_field :duration, class: 'form-control', placeholder: 'Duration' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :notes, class: 'col-sm-2 control-label' %>
+    <div class="col-sm-10">
+      <%= f.text_area :notes, class: 'form-control', placeholder: 'Notes' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <%= link_to 'Back', :back, class: 'btn btn-default' %>
+      <%= f.submit 'Save', class: 'btn btn-info' %>
+    </div>
+  </div>
 <% end %>
