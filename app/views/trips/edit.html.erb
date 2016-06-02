@@ -2,6 +2,8 @@
   <title>Edit Trip</title>
 <% end %>
 
+<%= render 'header' %>
+
 <% if @trip.errors.any? %>
   <%= render 'validation' %>
 <% end %>
@@ -10,7 +12,7 @@
   <div class="row mid-full">
     <div class="col-xs-12">
       <h1>Edit Trip</h1>
-      <hr>
+      <hr><br>
       <%= render 'form' %>
     </div>
   </div>

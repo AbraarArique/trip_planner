@@ -1,6 +1,6 @@
 <div class="row mid-full error">
   <div class="col-xs-12">
-    <b>Oops! <%= pluralize(@pin_note.errors.count, 'Error') %></b>
+    <h3><b>Oops! <%= pluralize(@pin_note.errors.count, 'Error') %>:</b></h3>
     <ul>
       <% @pin_note.errors.full_messages.each do |i| %>
         <li><%= i %></li>

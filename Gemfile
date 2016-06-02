@@ -29,6 +29,13 @@ gem 'devise'
 gem 'bootstrap-sass'
 gem 'font-awesome-sass'
 
+# Use Bootstrap DateTimePicker
+gem 'momentjs-rails', '>= 2.9.0'
+gem 'bootstrap3-datetimepicker-rails', '~> 4.14.30'
+
+# Use Data-Confirm Modal to display Bootstrap modals
+gem 'data-confirm-modal', github: 'ifad/data-confirm-modal'
+
 group :development, :test do
   # Use RSpec, FactoryGirl and Capybara
   gem 'rspec'

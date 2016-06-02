@@ -3,56 +3,83 @@
 <% end %>
 
 <%= render 'header' %>
+
 <div class="container-fluid">
   <div class="row">
     <div class="col-xs-12 col-md-8">
-      <% @trips.each do |trip| %>
-        <div class="day">
-          <div class="row">
-            <div class="col-xs-12">
-              <h2><%= trip.name %></h2>
-              <%= link_to 'Delete', trip, method: :delete, class: 'btn btn-danger pull-right' %>
-              <%= link_to 'Edit', edit_trip_path(trip), class: 'btn btn-round btn-info pull-right' %>
-              <hr>
-              <p>
-                <% if trip.start_date != nil %>
-                  From <%= trip.start_date %>
+      <% if @trips.any? %>
+        <% @trips.each do |trip| %>
+          <div class="day">
+            <div class="row">
+              <div class="col-xs-12">
+                <h2><%= trip.name %></h2>
+                <%= link_to trip, method: :delete, class: 'btn btn-danger pull-right', data: { confirm: 'This will delete this item permanently.' } do %>
+                  <i class="fa fa-trash-o"></i>&nbsp;Delete
                 <% end %>
-                <% if trip.end_date != nil %>
-                  To <%= trip.end_date %>
+                <%= link_to edit_trip_path(trip), class: 'btn btn-round btn-primary pull-right' do %>
+                  <i class="fa fa-pencil"></i>&nbsp;Edit
                 <% end %>
-              </p>
+                <hr>
+                <p>
+                  <% if trip.start_date != nil %>
+                    From <%= trip.start_date %>
+                  <% end %>
+                  <% if trip.end_date != nil %>
+                    To <%= trip.end_date %>
+                  <% end %>
+                </p>
+              </div>
+            </div>
+            <div class="row text-center">
+              <% if trip.events.any? %>
+                <% trip.events.each do |event| %>
+                  <%= link_to event do %>
+                    <div class="col-xs-3">
+                      <p class="text-center"><%= event.title %></p>
+                    </div>
+                  <% end %>
+                <% end %>
+              <% else %>
+                <p class="text-muted"><b>You don't have any events for this trip yet.</b></p>
+                <%= link_to new_trip_event_path(trip), class: 'btn btn-primary' do %>
+                  <i class="fa fa-plus"></i>&nbsp;Create a new event
+                <% end %>
+              <% end %>
             </div>
           </div>
-          <div class="row text-center">
-            <% if trip.events.any? %>
-              <% trip.events.each do |event| %>
-                <%= link_to event do %>
-                  <div class="col-xs-3">
-                    <p class="text-center"><%= event.title %></p>
-                  </div>
-                <% end %>
-              <% end %>
-            <% else %>
-              <p class="text-muted"><b>You don't have any events for this trip yet.</b></p>
-              <%= link_to new_trip_event_path(trip), class: 'btn btn-info btn-md' do %>
-                <i class="fa fa-plus"></i>&nbsp;Create a new event
-              <% end %>
-            <% end %>
-          </div>
+        <% end %>
+      <% else %>
+        <div class="no-day">
+          <p class="text-muted"><b>You don't have any trips yet.</b></p>
+          <%= link_to new_trip_path, class: 'btn btn-primary' do %>
+            <i class="fa fa-plus"></i>&nbsp;Create a new trip
+          <% end %>
         </div>
       <% end %>
     </div>
     <div class="col-xs-12 col-md-4">
-      <% @pin_notes.each do |pin_note| %>
-        <div class="day">
-          <div class="row">
-            <div class="col-xs-12">
-              <h4><%= pin_note.note %></h4>
-              <%= link_to 'Delete', pin_note, method: :delete, class: 'btn btn-danger pull-right' %>
-              <%= link_to 'Edit', edit_pin_note_path(pin_note), class: 'btn btn-info pull-right' %>
+      <% if @pin_notes.any? %>
+        <% @pin_notes.each do |pin_note| %>
+          <div class="day day-note">
+            <div class="row">
+              <div class="col-xs-12">
+                <h4><%= pin_note.note %></h4>
+                <%= link_to pin_note, method: :delete, class: 'btn btn-danger pull-right', data: { confirm: 'This will delete this item permanently.'} do %>
+                  <i class="fa fa-trash-o"></i>&nbsp;Delete
+                <% end %>
+                <%= link_to edit_pin_note_path(pin_note), class: 'btn btn-primary pull-right' do %>
+                  <i class="fa fa-pencil"></i>&nbsp;Edit
+                <% end %>
+              </div>
             </div>
           </div>
+        <% end %>
+      <% else %>
+        <div class="no-day">
+          <p class="text-muted"><b>You don't have any notes yet.</b></p>
+          <%= link_to new_pin_note_path, class: 'btn btn-primary' do %>
+            <i class="fa fa-plus"></i>&nbsp;Create a new note
+          <% end %>
         </div>
       <% end %>
     </div>

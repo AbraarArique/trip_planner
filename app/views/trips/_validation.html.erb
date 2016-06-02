@@ -1,6 +1,6 @@
 <div class="row mid-full error">
   <div class="col-xs-12">
-    <b>Oops! <%= pluralize(@trip.errors.count, 'Error') %></b>
+    <h3><b>Oops! <%= pluralize(@trip.errors.count, 'Error') %>:</b></h3>
     <ul>
       <% @trip.errors.full_messages.each do |i| %>
         <li><%= i %></li>

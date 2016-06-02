@@ -2,6 +2,8 @@
   <title>Edit Event | Trip Planner</title>
 <% end %>
 
+<%= render 'trips/header' %>
+
 <% if @event.errors.any? %>
   <%= render 'validation' %>
 <% end %>

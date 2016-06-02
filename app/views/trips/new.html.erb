@@ -2,15 +2,16 @@
   <title>Create Trip</title>
 <% end %>
 
-<% if @trip.errors.any? %>
-  <%= render 'validation' %>
-<% end %>
+<%= render 'header' %>
 
 <div class="container">
+  <% if @trip.errors.any? %>
+    <%= render 'validation' %>
+  <% end %>
   <div class="row mid-full">
     <div class="col-xs-12">
       <h1>Add a New Trip</h1>
-      <hr>
+      <hr><br>
       <%= render 'form' %>
     </div>
   </div>
