@@ -1,6 +1,5 @@
 class EventsController < ApplicationController
-  layout 'app'
-  before_action :authenticate_user!
+  before_action :authenticate_user!, :set_layout
 
   def create
     @trip = current_user.trips.find(params[:trip_id])

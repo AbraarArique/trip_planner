@@ -1,6 +1,5 @@
 class TripsController < ApplicationController
-  layout 'app'
-  before_action :authenticate_user!
+  before_action :authenticate_user!, :set_layout
 
   def create
     @trip = current_user.trips.build(trip_params)

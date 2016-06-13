@@ -1,6 +1,5 @@
 class NotesController < ApplicationController
-  layout 'app'
-  before_action :authenticate_user!
+  before_action :authenticate_user!, :set_layout
 
   def create
     @note = current_user.notes.new(note_params)
