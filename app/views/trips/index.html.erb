@@ -11,8 +11,10 @@
         <% @trips.each do |trip| %>
           <div class="block">
             <div class="row">
-              <div class="col-xs-12">
+              <div class="col-xs-6">
                 <h2><%= trip.name %></h2>
+              </div>
+              <div class="col-xs-6">
                 <%= link_to trip, method: :delete, class: 'btn btn-danger pull-right', data: { confirm: 'This will delete this item permanently.' } do %>
                   <i class="fa fa-trash-o"></i>&nbsp;Delete
                 <% end %>
@@ -22,6 +24,8 @@
                 <%= link_to new_trip_event_path(trip), class: 'btn btn-round btn-info pull-right' do %>
                   <i class="fa fa-plus"></i>&nbsp;New Event
                 <% end %>
+              </div>
+              <div class="col-xs-12">
                 <hr>
                 <p>
                   <% if trip.start_date != nil %>
@@ -65,8 +69,10 @@
         <% @notes.each do |note| %>
           <div class="block block-note">
             <div class="row">
-              <div class="col-xs-12">
+              <div class="col-xs-5">
                 <h4><%= note.note %></h4>
+              </div>
+              <div class="col-xs-7">
                 <%= link_to note, method: :delete, class: 'btn btn-danger pull-right', data: { confirm: 'This will delete this item permanently.'} do %>
                   <i class="fa fa-trash-o"></i>&nbsp;Delete
                 <% end %>
