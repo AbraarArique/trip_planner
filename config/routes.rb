@@ -4,5 +4,5 @@ Rails.application.routes.draw do
   resources :trips, except: :show do
     resources :events, except: :index
   end
-  resources :pin_notes, except: [:index, :show]
+  resources :notes, except: [:index, :show]
 end

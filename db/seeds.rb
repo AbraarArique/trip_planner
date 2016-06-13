@@ -47,6 +47,6 @@ duration: '1 Hour',
 place: 'Jamuna Bridge',
 notes: 'Great experience.')
 
-@pin_note1 = @user.create(note: 'What an awesome day!')
-@pin_note2 = @user.create(note: 'Booked an awesome villa.')
-@pin_note3 = @user.create(note: 'Business is booming! :D')
+@note1 = @user.create(note: 'What an awesome day!')
+@note2 = @user.create(note: 'Booked an awesome villa.')
+@note3 = @user.create(note: 'Business is booming! :D')

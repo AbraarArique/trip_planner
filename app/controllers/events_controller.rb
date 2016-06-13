@@ -4,7 +4,7 @@ class EventsController < ApplicationController
 
   def create
     @trip = current_user.trips.find(params[:trip_id])
-    @event = @trip.events.new(event_params)
+    @event = @trip.events.build(event_params)
     if @event.save
       redirect_to root_path
     else
@@ -18,16 +18,17 @@ class EventsController < ApplicationController
   end
 
   def edit
-    @event = get_event(params)
+    @trip = current_user.trips.find(params[:trip_id])
+    @event = get_event(params[:id])
   end
 
   def show
-    @event = get_event(params)
+    @event = get_event(params[:id])
   end
 
   def update
-    @event = get_event(params)
-    if @event.update(event_params)
+    @event = get_event(params[:id])
+    if @event.update(event_params[:id])
       redirect_to @event
     else
       render 'edit'
@@ -35,7 +36,7 @@ class EventsController < ApplicationController
   end
 
   def destroy
-    @event = get_event(params)
+    @event = get_event(params[:id])
     @event.destroy
     redirect_to root_path
   end
@@ -47,6 +48,6 @@ class EventsController < ApplicationController
   end
 
   def event_params
-    params.require(:event).permit(:title, :date, :time, :duration, :notes)
+    params.require(:event).permit(:title, :date, :time, :duration, :place, :notes)
   end
 end

@@ -1,4 +1,4 @@
-// Place all the styles related to the days controller here.
+// Place all the styles related to the blocks controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
@@ -21,6 +21,12 @@
   background: #d9534f;
   color: #ffffff;
   border-color: #d9534f;
+}
+
+.alert-success {
+  background: #5cb85c;
+  color: #ffffff;
+  border-color: #5cb85c;
 }
 
 .no-gutter > [class*='col-'] {
@@ -70,13 +76,17 @@ hr {
   border-color: #dce0e1;
 }
 
-h1, h2, h3, h4 {
+h1, h2, h3, h4, h5 {
   font-weight: 100;
   color: #555555;
 
   b {
     font-weight: 300;
   }
+}
+
+h5 {
+  font-size: 20px;
 }
 
 p {
@@ -190,31 +200,33 @@ b {
   border-top-color: #f04124;
 }
 
-.day h2, .day h4 {
+.block h2, .block h4, .block h1 {
   display: inline-block;
 }
 
-.day h4 {
+.block h4 {
   margin: 20px 0;
 }
 
-.day {
+.block {
   margin: 15px;
   padding: 0 15px 0;
   border: 1px solid #eeeeee;
   border-top: 7px solid #5bc0de;
+  box-shadow: 3px 3px 10px #eeeeee;
 }
 
-.no-day {
-  @extend .day;
+.no-block {
+  @extend .block;
   border: 3px dashed #eeeeee;
+  padding: 25px;
 }
 
-.day.day-note {
+.block.block-note {
   border-top-color: #5cb85c;
 }
 
-.day .row:nth-child(1) {
+.block .row:nth-child(1) {
   background: #f8faf9;
   border-bottom: 1px solid #DCE0E1;
 
@@ -249,7 +261,7 @@ b {
   }
 }
 
-.day .row:nth-child(2) {
+.block .row:nth-child(2) {
   padding: 15px;
   background: #ffffff;
 
@@ -379,6 +391,7 @@ form .btn {
   border-width: 1px;
   border-radius: 3px;
   transition: all 0.2s ease-in-out 0s;
+  box-shadow: none;
 
   &:hover {
     border-color: #337ab7;
@@ -391,4 +404,34 @@ form .btn {
 
 ul {
   list-style-type: square;
+}
+
+.event {
+  background: #5cb85c;
+  margin-right: 8.3%;
+  transition: all 0.2s ease-in-out 0s;
+
+  &:hover {
+    transform: scale(1.12, 1.12);
+  }
+
+  &:after {
+    left: 100%;
+  	top: 50%;
+  	border: solid transparent;
+  	content: " ";
+  	height: 0;
+  	width: 0;
+  	position: absolute;
+  	pointer-events: none;
+  	border-color: rgba(136, 183, 213, 0);
+  	border-left-color: #5cb85c;
+  	border-width: 20px;
+  	margin-top: -20px;
+  }
+
+  p {
+    color: #ffffff;
+    margin-top: 10px;
+  }
 }

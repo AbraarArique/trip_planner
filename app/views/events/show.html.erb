@@ -5,17 +5,26 @@
 <%= render 'trips/header' %>
 
 <div class="container">
-  <div class="row mid-full">
+  <div class="row block mid-full">
     <div class="col-xs-12">
       <h1><%= @event.title %></h1>
+      <%= link_to trip_event_path(@event.trip_id, @event), method: :delete, class: 'btn btn-danger pull-right', data: { confirm: 'This will delete this item permanently.' } do %>
+        <i class="fa fa-trash-o"></i>&nbsp;Delete
+      <% end %>
+      <%= link_to edit_trip_event_path(@event.trip_id, @event), class: 'btn btn-round btn-primary pull-right' do %>
+        <i class="fa fa-pencil"></i>&nbsp;Edit
+      <% end %>
+      <%= link_to :back, class: 'btn btn-round btn-default pull-right' do %>
+        <i class="fa fa-arrow-left"></i>&nbsp;Back
+      <% end %>
       <hr>
       <article>
         <section>
-          <p>At #{@event.time} in Day #{@event.date} for #{@event.duration}.</p>
-          <p><%= @event.notes %></p>
-          <h4>Place:</h4>
-          <%= link_to 'Edit This Plan', edit_event_path(@event), class: 'button' %>
-          <% link_to 'Delete Plan', @event, method: :delete, class: 'button alert' %>
+          <h5><b>Date:</b> <%= @event.date %></h5>
+          <h5><b>Time:</b> <%= @event.time %></h5>
+          <h5><b>Duration:</b> <%= @event.duration %></h5>
+          <h5><b>Place:</b> <%= @event.place %></h5>
+          <h5><b>Notes:</b> <%= @event.notes %></h5>
         </section>
       </article>
     </div>

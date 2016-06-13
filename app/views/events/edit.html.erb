@@ -4,15 +4,14 @@
 
 <%= render 'trips/header' %>
 
-<% if @event.errors.any? %>
-  <%= render 'validation' %>
-<% end %>
-
 <div class="container">
-  <div class="row mid-full">
+  <% if @event.errors.any? %>
+    <%= render 'validation' %>
+  <% end %>
+  <div class="row block mid-full">
     <div class="col-xs-12">
       <h1>Edit Event</h1>
-      <hr>
+      <hr><br>
       <%= render 'form' %>
     </div>
   </div>

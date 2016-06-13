@@ -5,7 +5,7 @@
 <div class="container devise-page">
   <div class="row">
     <div class="col-xs-12 text-center">
-      <%= link_to 'http://abraararique.com/trip_planner' do %>
+      <%= link_to root_path do %>
         <%= image_tag 'tp_inverted', class: 'img-responsive' %>
       <% end %>
     </div>
@@ -44,7 +44,7 @@
             <%= f.submit "Update", class: 'btn btn-primary btn-block' %>
           </div>
         </div>
-        <%= link_to 'Delete my account permanently!', registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: 'text-danger' %>
+        <%= link_to 'Delete my account permanently!', registration_path(resource_name), data: { confirm: 'This will delete your account permanently.' }, method: :delete, class: 'text-danger' %>
       <% end %>
     </div>
   </div>

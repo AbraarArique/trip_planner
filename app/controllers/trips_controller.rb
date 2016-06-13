@@ -3,7 +3,7 @@ class TripsController < ApplicationController
   before_action :authenticate_user!
 
   def create
-    @trip = current_user.trips.new(trip_params)
+    @trip = current_user.trips.build(trip_params)
     if @trip.save
       redirect_to root_path
     else
@@ -13,11 +13,11 @@ class TripsController < ApplicationController
 
   def index
     @trips = current_user.trips.all
-    @pin_notes = current_user.pin_notes.all
+    @notes = current_user.notes.all
   end
 
   def new
-    @trip = current_user.trips.new
+    @trip = current_user.trips.build
   end
 
   def show
@@ -51,6 +51,6 @@ class TripsController < ApplicationController
   end
 
   def trip_params
-    params.require(:trip).permit(:name, :start, :end)
+    params.require(:trip).permit(:name, :start_date, :end_date)
   end
 end

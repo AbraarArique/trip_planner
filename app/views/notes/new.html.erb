@@ -1,16 +1,16 @@
 <% content_for :title do %>
-  <title>Edit Pin Note</title>
+  <title>Create New Note</title>
 <% end %>
 
 <%= render 'trips/header' %>
 
 <div class="container">
-  <% if @pin_note.errors.any? %>
+  <% if @note.errors.any? %>
     <%= render 'validation' %>
   <% end %>
-  <div class="row mid-full">
+  <div class="row block mid-full">
     <div class="col-xs-12">
-      <h1>Edit Note</h1>
+      <h1>Add a New Note</h1>
       <hr><br>
       <%= render 'form' %>
     </div>
