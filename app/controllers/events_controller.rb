@@ -5,7 +5,7 @@ class EventsController < ApplicationController
     @trip = current_user.trips.find(params[:trip_id])
     @event = @trip.events.build(event_params)
     if @event.save
-      redirect_to root_path
+      redirect_to trip_event_path(@trip, @event)
     else
       render 'new'
     end
@@ -28,7 +28,7 @@ class EventsController < ApplicationController
   def update
     @event = get_event(params[:id])
     if @event.update(event_params[:id])
-      redirect_to @event
+      redirect_to trip_event_path(@trip, @event)
     else
       render 'edit'
     end
