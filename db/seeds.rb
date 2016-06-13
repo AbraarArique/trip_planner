@@ -1,4 +1,5 @@
-@user = User.create(email: 'abraararique@gmail.com', password: 'password123')
+@user = User.new(email: 'abraararique@gmail.com', password: 'password123')
+@user.save
 
 @trip1 = @user.trips.create(name: 'Cox\'s Bazar Trip',
 start_date: '12/02/2016',
@@ -47,6 +48,6 @@ duration: '1 Hour',
 place: 'Jamuna Bridge',
 notes: 'Great experience.')
 
-@note1 = @user.create(note: 'What an awesome day!')
-@note2 = @user.create(note: 'Booked an awesome villa.')
-@note3 = @user.create(note: 'Business is booming! :D')
+@note1 = @user.notes.create(note: 'What an awesome day!')
+@note2 = @user.notes.create(note: 'Booked an awesome villa.')
+@note3 = @user.notes.create(note: 'Business is booming! :D')
