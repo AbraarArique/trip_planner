@@ -1,2 +1,2 @@
-module PinNotesHelper
+module NotesHelper
 end
