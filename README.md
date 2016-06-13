@@ -4,45 +4,29 @@
 
 Trip Planner is a travel planning and note keeping app built using Ruby on Rails. It's core features are the following:
 
-  - Create "Days" for each day in your trip
-  - Associate one or more "Plans" to that day
-  - A "Plan" can have one "Place"
-  - The "Place" is automatically shown on the "Plan" details page using Google Maps JavaScript API
-  - The Location of "Place" uses Google Maps Autocomplete API
-  - The human-readable Location is automatically converted into Latitude/Longitude values using the Google Maps Geocoding API
-  - Google Maps also enables 360 degree Street View
-  - Supports creating, editing and deleting of "Days", "Plans" and "Places"
-
+  - Create a free account using your email address
+  - Manage your account (e.g. change email or password)
+  - Create "Trips" for each of your individual trip
+  - Add one or more "Events" to that trip
+  - Create "Notes" for small things you have to remember
 ---
 
 This app is built using:
 
-  - Ruby 2 (managed by RVM)
-  - Ruby on Rails 4
+  - Ruby 2.x
+  - Ruby on Rails 4.x
   - PostgreSQL
-  - Haml
+  - HTML5
+  - ERB
+  - CSS3
   - Sass
+  - JavaScript
   - CoffeeScript
   - jQuery
-  - Zurb Foundation
-  - RSpec, Capybara and FactoryGirl for testing
+  - Twitter Bootstrap
+  - Devise
   - Heroku
   - Icons from Font Awesome
-
-## Screenshots
-
-![Trip Planner Intro Logo](https://github.com/AbraarAriquePro/trip_planner/blob/master/screenshots/tp_logo.png)
-*Trip Planner: A RoR Trip Planning Solution*
-![Home Page](https://github.com/AbraarAriquePro/trip_planner/blob/master/screenshots/home.png)
-*The Home Page: Displays all the plans and pin notes.*
-![Plan Details Page](https://github.com/AbraarAriquePro/trip_planner/blob/master/screenshots/plan.png)
-*Plan Details Page: Shows plan name, time, duration, date, extra notes, associated place, location and map.*
-![Edit Plan Page](https://github.com/AbraarAriquePro/trip_planner/blob/master/screenshots/plan_edit.png)
-*Plan Editing Page: Edit a plan's title, time, date, duration and notes.*
-![Edit Place Page](https://github.com/AbraarAriquePro/trip_planner/blob/master/screenshots/edit_place.png)
-*Place Editing Page: Edit a place's name, location, description and URL. The location field has Google Maps Location Autofilling and Latitude and Longitude is automatically generated from the location.*
-![Edit Note Page](https://github.com/AbraarAriquePro/trip_planner/blob/master/screenshots/edit_note.png)
-*Note Editing Page: Edit a pin note.*
 
 ## Installation Instructions:
 
