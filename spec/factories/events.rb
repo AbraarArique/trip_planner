@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  factory :trip_plan do
+  factory :event do
     title 'TT'
     date 1
     time 'TM'

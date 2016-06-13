@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe DaysController, type: :controller do
+RSpec.describe TripsController, type: :controller do
   describe '#index' do
     it 'responds with 200 status code' do
       get :index
@@ -12,11 +12,11 @@ RSpec.describe DaysController, type: :controller do
       expect(response).to render_template('index')
     end
 
-    it 'gets all the days in @days' do
-      d1 = create(:day)
-      d2 = create(:day)
+    it 'gets all the days in @trips' do
+      d1 = create(:trips)
+      d2 = create(:trips)
       get :index
-      expect(assigns(:days)).to match_array [d1, d2]
+      expect(assigns(:trips)).to match_array [d1, d2]
     end
   end
 end
