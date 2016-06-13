@@ -9,7 +9,8 @@ Trip Planner is a travel planning and note keeping app built using Ruby on Rails
   - Create "Trips" for each of your individual trip
   - Add one or more "Events" to that trip
   - Create "Notes" for small things you have to remember
----
+
+## Tech Stack
 
 This app is built using:
 
