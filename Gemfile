@@ -37,6 +37,8 @@ gem 'bootstrap3-datetimepicker-rails', '~> 4.14.30'
 # Use Data-Confirm Modal to display Bootstrap modals
 gem 'data-confirm-modal', github: 'ifad/data-confirm-modal'
 
+gem 'rails_12factor', group: :production
+
 group :development, :test do
   # Use RSpec, FactoryGirl and Capybara
   gem 'rspec'
