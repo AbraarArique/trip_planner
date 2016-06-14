@@ -29,7 +29,7 @@ This app is built using:
   - Heroku
   - Icons from Font Awesome
 
-## Installation Instructions:
+## Installation Instructions
 
   - Make sure you have Ruby and Ruby on Rails installed
   - Clone this repository into your local machine:
@@ -67,7 +67,7 @@ This app is built using:
 
 Once the server is up and ready to receive connections, visit [http://localhost:3000/](http://localhost:3000) in your browser and you'll see the app up and running.
 
-## Contributing:
+## Contributing
 This app is open for community contributions. Please follow the rules bellow to contribute:
 
   - Fork this project
