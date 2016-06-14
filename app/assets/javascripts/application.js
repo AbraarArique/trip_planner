@@ -18,3 +18,4 @@
 //= require bootstrap-datetimepicker
 //= require data-confirm-modal
 //= require_tree .
+//= require_self
